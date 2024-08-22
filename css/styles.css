@@ -1,26 +1,96 @@
-/* Estilos generales de la página */
+body {
+  background-color: #9EABB1;
+  font-family: 'Raleway', sans-serif;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: #fff;
+}
+
+.text-center.my-4 {
+  background-color: #142326;
+  color: #fff;
+  padding: 20px;
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 5px;
+  margin-bottom: 40px;
+}
+
+.product-card {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #D1D1D1;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  width: 100%;
+  max-width: 300px;
+}
+
+.product-card:hover {
+  transform: scale(1.02);
+}
+
+.product-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.product-card h2 {
+  font-size: 1.25em;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.product-card p {
+  font-size: 0.9em;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.product-card .price {
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.product-card .sold {
+  font-size: 0.85em;
+  color: gray;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.product-card .sold img {
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+#products-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Estilos de la rama master */
+
 .jumbotron,
 .card-body,
 .container,
 .site-header {
   font-family: 'Verdana', serif !important;
-}
-
-.jumbotron .display-4 {
-  font-weight: bold;
-}
-
-nav a {
-  text-decoration: none;
-}
-
-.bd-placeholder-img {
-  font-size: 1.125rem;
-  text-anchor: middle;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }
 
 @media (min-width: 768px) {
@@ -29,7 +99,6 @@ nav a {
   }
 }
 
-/* Estilos específicos de la página */
 .jumbotron {
   height: 50vh;
   padding: 5em inherit;
@@ -70,8 +139,12 @@ nav a {
 }
 
 footer {
+  padding: 20px 0;
   padding-top: 3rem;
   padding-bottom: 3rem;
+  background-color: #f8f9fa;
+  border-top: 1px solid #e9ecef;
+  margin-top: 40px;
 }
 
 footer p {
@@ -87,11 +160,10 @@ footer p {
   color: black;
 }
 
-/* Estilos de formularios de inicio de sesión */
 input[type="text"],
 input[type="password"] {
   font-family: 'Istok Web', sans-serif;
-  border-radius: 1.25rem; 
+  border-radius: 1.25rem;
   padding: 0.75em;
   border: 0.1em solid #ccc;
   width: 100%;
@@ -100,17 +172,17 @@ input[type="password"] {
 
 button.btn-primary {
   font-family: 'Istok Web', sans-serif;
-  background-color: #28a745; 
+  background-color: #28a745;
   border: none;
-  border-radius: 0.5rem; 
-  padding: 0.5em 1em; 
-  width: 60%; 
-  min-width: 9em; 
-  max-width: 15em; 
-  margin: 1em auto; 
-  display: block; /* Aquí estaba el error */
-  font-size: 1em; 
-  text-align: center; 
+  border-radius: 0.5rem;
+  padding: 0.5em 1em;
+  width: 60%;
+  min-width: 9em;
+  max-width: 15em;
+  margin: 1em auto;
+  display: block;
+  font-size: 1em;
+  text-align: center;
 }
 
 .text-center {
@@ -119,17 +191,15 @@ button.btn-primary {
 
 h2 {
   text-align: center;
-  margin-bottom: 1.5em; 
+  margin-bottom: 1.5em;
 }
 
-/* Estilo para los placeholders */
 ::placeholder {
-  color: #6c757d; 
+  color: #6c757d;
   opacity: 1;
   font-family: 'Istok Web', sans-serif;
 }
 
-/* Si hay prefijos para navegadores, asegúrate de incluirlos */
 ::-webkit-input-placeholder {
   color: #6c757d;
   font-family: 'Istok Web', sans-serif;
@@ -144,5 +214,3 @@ h2 {
   color: #6c757d;
   font-family: 'Istok Web', sans-serif;
 }
-
-/* Otros 
