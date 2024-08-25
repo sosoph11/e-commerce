@@ -2,14 +2,15 @@ document.addEventListener("DOMContentLoaded", function () {
   let catID = localStorage.getItem("catID");
   let url = `https://japceibal.github.io/emercado-api/cats_products/${catID}.json`; 
   let productsContainer = document.getElementById("products-container");
+  let categoryTitle = document.querySelector("main > div.text-center.my-4 > h1");
 
   fetch(url)
     .then(response => response.json())
     .then(data => {
       productsContainer.innerHTML = "";
 
-      // Verifica si la categoría es de autos
       if (catID === "101") {
+        categoryTitle.textContent = "AUTOS";
         data.products.forEach(product => {
           let productCard = document.createElement("div");
           productCard.className = "product-card col-md-4";
@@ -23,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
           productsContainer.appendChild(productCard);
         });
       } else {
-        // Si la categoría no es autos, muestra "Funcionalidad en desarrollo"
+        categoryTitle.textContent = "";
         productsContainer.innerHTML = `
           <div class="alert alert-danger text-center" role="alert">
             <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
