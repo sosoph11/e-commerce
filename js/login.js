@@ -1,3 +1,14 @@
+// Verificar si está autenticado
+document.addEventListener('DOMContentLoaded', function() {
+    let isAuthenticated = localStorage.getItem('isAuthenticated');
+    let currentPage = window.location.pathname.split('/').pop(); 
+
+    // Si no está autenticado y no está en la página de login, redirigir a login.html
+    if (isAuthenticated !== 'true' && currentPage !== 'login.html') {
+        window.location.href = 'login.html';
+    }
+});
+
 // Función que se ejecuta al hacer clic en el botón "Ingresar"
 function handleLogin() {
     const username = document.getElementById('username').value;
@@ -8,13 +19,15 @@ function handleLogin() {
       showAlertError('Por favor, completa todos los campos.');
       return;
     }
-  
+   //Guarda la sesión si la autenticación es exitosa 
+    localStorage.setItem('isAuthenticated', 'true');
+
     // Mostrar mensaje de "Ingreso exitoso"
     showAlertSuccess('¡Ingreso exitoso! Redirigiendo a la página de portada...');
   
     // Redirigir a la página de portada después de 2 segundos
     setTimeout(function() {
-      window.location.href = 'index.html'; // Redirige a la página de portada (cambia 'index.html' por la URL correspondiente)
+      window.location.href = 'index.html'; // Redirige a la página de portada 
     }, 2000);
   }
   
@@ -32,4 +45,3 @@ function handleLogin() {
   
   // Event listener para el botón "Ingresar"
   document.getElementById('login-button').addEventListener('click', handleLogin);
-  
