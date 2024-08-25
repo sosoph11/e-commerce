@@ -1,8 +1,12 @@
-//Verificar si esta autenticado 
+// Verificar si está autenticado
 document.addEventListener('DOMContentLoaded', function() {
-  if (localStorage.getItem('isAuthenticated') !== 'true' && window.location.pathname !== '/login.html') {
-      window.location.href = 'login.html';
-  }
+    let isAuthenticated = localStorage.getItem('isAuthenticated');
+    let currentPage = window.location.pathname.split('/').pop(); 
+
+    // Si no está autenticado y no está en la página de login, redirigir a login.html
+    if (isAuthenticated !== 'true' && currentPage !== 'login.html') {
+        window.location.href = 'login.html';
+    }
 });
 
 // Función que se ejecuta al hacer clic en el botón "Ingresar"
