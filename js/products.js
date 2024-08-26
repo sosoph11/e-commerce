@@ -3,22 +3,13 @@ document.addEventListener("DOMContentLoaded", function () {
   let url = `https://japceibal.github.io/emercado-api/cats_products/${catID}.json`; 
   let productsContainer = document.getElementById("products-container");
 
-  let categoryTitle = document.getElementById("category-title");
-
-
   fetch(url)
     .then(response => response.json())
     .then(data => {
-      productsContainer.innerHTML = "";
-
-      categoryTitle.textContent = data.catName;
-
-      if (data.products) {
-
+      productsContainer.innerHTML = ""; // Limpiar el contenedor de productos
 
       // Verifica si la categoría es de autos
       if (catID === "101") {
-
         data.products.forEach(product => {
           let productCard = document.createElement("div");
           productCard.className = "product-card col-md-4";
@@ -32,9 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
           productsContainer.appendChild(productCard);
         });
       } else {
-
         // Si la categoría no es autos, muestra "Funcionalidad en desarrollo"
-
         productsContainer.innerHTML = `
           <div class="alert alert-danger text-center" role="alert">
             <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
@@ -45,6 +34,4 @@ document.addEventListener("DOMContentLoaded", function () {
     .catch(error => {
       console.error("Error al cargar los productos:", error);
     });
-
 });
-
