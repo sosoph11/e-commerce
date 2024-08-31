@@ -142,8 +142,9 @@ footer {
   padding: 20px 0;
   padding-top: 3rem;
   padding-bottom: 3rem;
-  background-color: #f8f9fa;
-  border-top: 1px solid #e9ecef;
+  background: linear-gradient(to right,#03423f, #0e0124);
+  border-top: 0.0625rem solid #03396e;
+  width: 100%;
   margin-top: 40px;
 }
 
@@ -160,57 +161,62 @@ footer p {
   color: black;
 }
 
-input[type="text"],
-input[type="password"] {
-  font-family: 'Istok Web', sans-serif;
-  border-radius: 1.25rem;
-  padding: 0.75em;
-  border: 0.1em solid #ccc;
-  width: 100%;
-  box-sizing: border-box;
+.login-container {
+  background-color:#e0dcdc;
+    padding: 2rem;
+    border-radius: 0.625rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+    width: 21.8rem;
+ 
 }
 
-button.btn-primary {
-  font-family: 'Istok Web', sans-serif;
-  background-color: #28a745;
-  border: none;
-  border-radius: 0.5rem;
-  padding: 0.5em 1em;
-  width: 60%;
-  min-width: 9em;
-  max-width: 15em;
-  margin: 1em auto;
-  display: block;
-  font-size: 1em;
-  text-align: center;
-}
-
-.text-center {
-  text-align: center;
-}
 
 h2 {
-  text-align: center;
-  margin-bottom: 1.5em;
+    text-align: center;
+    margin-bottom: 1.25rem;
+    color: #333;
+    font-weight: bold;
 }
 
-::placeholder {
-  color: #6c757d;
-  opacity: 1;
-  font-family: 'Istok Web', sans-serif;
+
+label {
+    display: block;
+    margin-bottom: 0.2rem;
+    color:#181717;
 }
 
-::-webkit-input-placeholder {
-  color: #6c757d;
-  font-family: 'Istok Web', sans-serif;
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 0.625rem;
+    margin-bottom: 1.5625rem;
+    margin-top: -0.3125rem;
+    border: 0.0625rem solid #ccc;
+    border-radius: 0.625rem;
+    box-sizing: border-box;
+    font-weight: lighter;
 }
 
-:-ms-input-placeholder {
-  color: #6c757d;
-  font-family: 'Istok Web', sans-serif;
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: #0011ff;
 }
 
-::-ms-input-placeholder {
-  color: #6c757d;
-  font-family: 'Istok Web', sans-serif;
+
+.btn-primary {
+    background-color: #020f0a;
+    color: white;
+    padding: 0.75rem 1.25rem;
+    border: none;
+    border-radius: 0.625rem;
+    cursor: pointer;
+    width: 100%;
+}
+
+
+.btn-primary:hover {
+    background-color: #000ed9;
 }

@@ -11,19 +11,48 @@
   <link href="css/styles.css" rel="stylesheet">
   <style>
     body {
-      background-color: rgb(248, 249, 250);
-    }
+    background: linear-gradient(to right,#03423f, #0e0124);
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  margin-top: 5rem;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+}
+
+
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+    
   </style>
 </head>
 
 <body>
   <main class="mt-5">
-    <div class="container">
+    <div class="login-container">
       <div id="alert-container"></div>
-      <h1 class="text-center">Iniciar Sesión</h1>
+      <div class="row justify-content-center">
+        <div class="col-sm-4 col-md-8 col-lg-12">
+
+      <h2 class="text-center">Iniciar Sesión</h2>
+      <div class="mb-1">
+        <label for="username" class="form-label">Usuario</label>
       <input type="text" id="username" placeholder="ingresa tu email" class="form-control my-3">
+      </div>
+      <div class="mb-1">
+        <label for="password" class="form-label">Contraseña</label>
       <input type="password" id="password" placeholder="ingresa tu contraseña" class="form-control my-3">
+      </div>
+      <div class="d-grid">
       <button id="login-button" class="btn btn-primary">Ingresar</button>
+      </div>
+    </div>
+      </div>
     </div>
   </main>
   <footer class="text-muted">
