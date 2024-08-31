@@ -22,6 +22,8 @@ function handleLogin() {
    //Guarda la sesión si la autenticación es exitosa 
     localStorage.setItem('isAuthenticated', 'true');
 
+    localStorage.setItem('username', username);
+
     // Mostrar mensaje de "Ingreso exitoso"
     showAlertSuccess('¡Ingreso exitoso! Redirigiendo a la página de portada...');
   
