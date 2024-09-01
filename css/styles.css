@@ -1,5 +1,5 @@
 body {
-  background-color: #9EABB1;
+  background-color: #9eabb156;
   font-family: 'Raleway', sans-serif;
 }
 
@@ -220,3 +220,20 @@ input[type="password"]:focus {
 .btn-primary:hover {
     background-color: #000ed9;
 }
+
+.soon-card {
+  background-color: rgba(0, 0, 0, 0.5); 
+  color: white;
+  border: 1px solid #D1D1D1;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  max-width: 300px; 
+}
+

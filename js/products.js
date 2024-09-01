@@ -22,6 +22,20 @@ document.addEventListener("DOMContentLoaded", function () {
           `;
           productsContainer.appendChild(productCard);
         });
+        
+        let soonCard = document.createElement("div");
+        soonCard.className = "col-md-4 mb-4 soon-card"; 
+
+        soonCard.innerHTML = `
+          <div class="card h-100 text-white text-center" style="background-color: rgba(0, 0, 0, 0); border: 0">
+            <div class="card-body d-flex align-items-center justify-content-center">
+              <h5 class="card-title">Muy pronto</h5>
+            </div>
+          </div>
+        `;
+
+        productsContainer.appendChild(soonCard);
+        
       } else {
         // Si la categoría no es autos, muestra "Funcionalidad en desarrollo"
         productsContainer.innerHTML = `
