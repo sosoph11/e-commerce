@@ -8,8 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .then(data => {
       productsContainer.innerHTML = ""; // Limpiar el contenedor de productos
 
-      // Verifica si la categoría es de autos
-      if (catID === "101") {
+      // Mostrar productos de la categoría seleccionada
         data.products.forEach(product => {
           let productCard = document.createElement("div");
           productCard.className = "product-card col-md-4";
@@ -23,9 +22,9 @@ document.addEventListener("DOMContentLoaded", function () {
           productsContainer.appendChild(productCard);
         });
         
+        // Agregar la tarjeta "Muy pronto"
         let soonCard = document.createElement("div");
         soonCard.className = "col-md-4 mb-4 soon-card"; 
-
         soonCard.innerHTML = `
           <div class="card h-100 text-white text-center" style="background-color: rgba(0, 0, 0, 0); border: 0">
             <div class="card-body d-flex align-items-center justify-content-center">
@@ -36,14 +35,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
         productsContainer.appendChild(soonCard);
         
-      } else {
-        // Si la categoría no es autos, muestra "Funcionalidad en desarrollo"
+      
+        // Si la categoría no está disponible, muestra "Funcionalidad en desarrollo"
         productsContainer.innerHTML = `
           <div class="alert alert-danger text-center" role="alert">
             <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
           </div>
         `;
-      }
+      
     })
     .catch(error => {
       console.error("Error al cargar los productos:", error);
