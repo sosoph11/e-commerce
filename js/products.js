@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
       productsContainer.innerHTML = ""; // Limpiar el contenedor de productos
 
       // Mostrar productos de la categoría seleccionada
+      if (catID) {
         data.products.forEach(product => {
           let productCard = document.createElement("div");
           productCard.className = "product-card col-md-4";
@@ -36,13 +37,13 @@ document.addEventListener("DOMContentLoaded", function () {
         productsContainer.appendChild(soonCard);
         
       
-        // Si la categoría no está disponible, muestra "Funcionalidad en desarrollo"
+      } else {// Si la categoría no está disponible, muestra "Funcionalidad en desarrollo"
         productsContainer.innerHTML = `
           <div class="alert alert-danger text-center" role="alert">
             <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
           </div>
         `;
-      
+      }
     })
     .catch(error => {
       console.error("Error al cargar los productos:", error);
