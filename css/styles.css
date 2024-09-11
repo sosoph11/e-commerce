@@ -241,3 +241,17 @@ input[type="password"]:focus {
   max-width: 300px; 
 }
 
+.text-center {
+  text-align: center; /* Alinea el texto en el centro */
+  font-size: 130%; /* Aumenta el tamaño de fuente */
+  color:white /* Cambia el color del texto */
+}
+
+.p-4 {
+  padding: 16px; /* Agrega padding de 16px en todos los lados */
+}
+
+.catName {
+  font-weight: bold; /* Pone en negrita el texto */
+  color: rgba(161, 197, 32, 0.872); /* Cambia el color de la categoría */
+}
