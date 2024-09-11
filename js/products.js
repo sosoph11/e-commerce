@@ -1,68 +1,41 @@
-document.addEventListener("DOMContentLoaded", function () {
-  let catID = localStorage.getItem("catID");
-  let url = `https://japceibal.github.io/emercado-api/cats_products/${catID}.json`; 
-  let productsContainer = document.getElementById("products-container");
+let catID = localStorage.getItem("catID");
+let url = `https://japceibal.github.io/emercado-api/cats_products/${catID}.json`; 
+let productsContainer = document.getElementById("products-container");
 
-  let catName = document.querySelector('.catName')
+let catName = document.querySelector('.catName')
 
-  let options = {
-    101: "Autos",
-    102: "Juguetes",
-    103: "Muebles"
-  }
+let options = {
+  101: "Autos",
+  102: "Juguetes",
+  103: "Muebles"
+}
 
-  catName.innerHTML = options[catID]
+catName.innerHTML = options[catID]
 
-  fetch(url)
-    .then(response => response.json())
-    .then(data => {
-      productsContainer.innerHTML = ""; // Limpiar el contenedor de productos
+let products = await fetch(url).then(res => res.json()
+.then(data => data.products)
+.catch(error => {
+  console.error("Error al cargar los productos:", error);
+}));
 
-      // Mostrar productos de la categoría seleccionada
-      if (catID) {
-        data.products.forEach(product => {
-          let productCard = document.createElement("div");
-          productCard.className = "product-card col-md-4";
-          productCard.innerHTML = `
-            <img src="${product.image}" alt="${product.name}">
-            <h2>${product.name}</h2>
-            <p>${product.description}</p>
-            <div class="price">${product.currency} ${product.cost}</div>
-            <div class="sold">${product.soldCount} Vendidos</div>
-          `;
-          productsContainer.appendChild(productCard);
-        });
-        
-        // Agregar la tarjeta "Muy pronto"
-        let soonCard = document.createElement("div");
-        soonCard.className = "col-md-4 mb-4 soon-card"; 
-        soonCard.innerHTML = `
-          <div class="card h-100 text-white text-center" style="background-color: rgba(0, 0, 0, 0); border: 0">
-            <div class="card-body d-flex align-items-center justify-content-center">
-              <h5 class="card-title">Muy pronto</h5>
-            </div>
-          </div>
-        `;
+if (products) {
+  productsContainer.innerHTML = "";
 
-        productsContainer.appendChild(soonCard);
-        
-      
-      } else {// Si la categoría no está disponible, muestra "Funcionalidad en desarrollo"
-        productsContainer.innerHTML = `
-          <div class="alert alert-danger text-center" role="alert">
-            <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
-          </div>
-        `;
-        document.querySelector('main .wrapper').style = 'display: none;'
-      }
-    })
-    .catch(error => {
-      console.error("Error al cargar los productos:", error);
+  if (catID) {
+    products.forEach(product => {
+      let productCard = document.createElement("div");
+      productCard.className = "product-card col-md-4";
+      productCard.innerHTML = `
+        <img src="${product.image}" alt="${product.name}">
+        <h2>${product.name}</h2>
+        <p>${product.description}</p>
+        <div class="price">${product.currency} ${product.cost}</div>
+        <div class="sold">${product.soldCount} Vendidos</div>
+      `;
+      productsContainer.appendChild(productCard);
     });
-});
-
-  // Función para crear la tarjeta "Muy pronto"
-  function createSoonCard() {
+    
+    // Agregar la tarjeta "Muy pronto"
     let soonCard = document.createElement("div");
     soonCard.className = "col-md-4 mb-4 soon-card"; 
     soonCard.innerHTML = `
@@ -72,8 +45,33 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
       </div>
     `;
+
     productsContainer.appendChild(soonCard);
+    
+  
+  } else {// Si la categoría no está disponible, muestra "Funcionalidad en desarrollo"
+    productsContainer.innerHTML = `
+      <div class="alert alert-danger text-center" role="alert">
+        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+      </div>
+    `;
+    document.querySelector('main .wrapper').style = 'display: none;'
   }
+}
+
+// Función para crear la tarjeta "Muy pronto"
+function createSoonCard() {
+  let soonCard = document.createElement("div");
+  soonCard.className = "col-md-4 mb-4 soon-card"; 
+  soonCard.innerHTML = `
+    <div class="card h-100 text-white text-center" style="background-color: rgba(0, 0, 0, 0); border: 0">
+      <div class="card-body d-flex align-items-center justify-content-center">
+        <h5 class="card-title">Muy pronto</h5>
+      </div>
+    </div>
+  `;
+  productsContainer.appendChild(soonCard);
+}
 
   // Función para filtrar productos por rango de precio
 function filterProductsByPrice(minPrice, maxPrice) {
@@ -128,6 +126,18 @@ document.getElementById("clearRangeFilter").addEventListener("click", function (
   updateProductDisplay(products); // Muestra todos los productos
 });
 
-
-
+function displayProducts(products) {
+  let productCard = products.map(product => {
+    return `
+    <div class ="product-card col-md-4">
+    <img src="${product.image}" alt="${product.name}">
+    <h2>${product.name}</h2>
+    <p>${product.description}</p>
+    <div class="price">${product.currency} ${product.cost}</div>
+    <div class="sold">${product.soldCount} Vendidos</div>
+    </div>
+    `
+  });
+  productsContainer.innerHTML = productCard.join('')
+}
 
