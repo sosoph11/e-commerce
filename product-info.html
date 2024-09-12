@@ -12,7 +12,7 @@
   <link href="css/styles.css" rel="stylesheet">
 </head>
 
-<body>
+<body style="background: linear-gradient(to right, #484f52, #97a2a6, #484f52);">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
     <div class="container">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -37,10 +37,15 @@
     </div>
   </nav>
   <main>
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
-      </div>
+      <div class="container">
+        <div id="product-info-container" class="row">
+          <div class="col-md-6">
+            <!-- Imagen -->
+          </div>
+          <div class="col-md-6">
+            <!-- Información -->
+          </div>
+        </div>
     </div>
   </main>
   <footer class="text-muted">
@@ -62,7 +67,7 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/login.js"></script>
   <script src="js/init.js"></script>
-  <script src="js/product-info.js"></script>
+  <script src="js/product-info.js" type="module"></script>
 </body>
 
 </html>
