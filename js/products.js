@@ -32,6 +32,13 @@ if (products) {
         <div class="price">${product.currency} ${product.cost}</div>
         <div class="sold">${product.soldCount} Vendidos</div>
       `;
+
+      // Agregar event listener para redireccionar a la página del producto
+    productCard.addEventListener('click', () => {
+    localStorage.setItem("productID", product.id); 
+    window.location.href = 'product-info.html'; 
+  });
+
       productsContainer.appendChild(productCard);
     });
     
