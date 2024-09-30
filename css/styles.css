@@ -325,3 +325,51 @@ input[type="password"]:focus {
   font-size: 1em; 
 }
 
+/* Estilo para la sección de calificación */
+.rating-section {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 2rem; /* Usar rem para padding */
+  border-radius: 0.625rem; /* 10px en rem */
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* 4px y 8px en rem */
+  margin-top: 2rem; /* 20px en rem */
+  max-width: 37.5rem; /* 600px en rem */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.rating-section h2 {
+  font-size: 1.5em; /* Mantener tamaño relativo */
+  margin-bottom: 2rem; /* 20px en rem */
+  text-align: center;
+  color: #333;
+}
+
+.star-rating {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem; /* 20px en rem */
+}
+
+.star-rating input {
+  display: none; /* Esconder los inputs */
+}
+
+.star-rating label {
+  font-size: 2.5em; /* Mantener tamaño relativo */
+  color: #ccc; 
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Estrellas doradas cuando están seleccionadas */
+.star-rating input:checked ~ label {
+  color: #FFD700;
+}
+
+/* Efecto hover para las estrellas */
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+  color: #FFD700;
+}
+
+
