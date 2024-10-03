@@ -42,23 +42,35 @@ document.addEventListener('DOMContentLoaded', async function () {
                 <p><strong id="product-price">${product.currency} ${product.cost}</strong></p>
                 <p>${product.description}</p>
             </div>
-            <div class="col-md-6">
-                <div class="rating-section">
-                    <h2>CALIFICA ESTE ARTÍCULO Y BRINDA TU OPINIÓN</h2>
-                    <label for="rating">CALIFICACIÓN:</label>
-                    <div class="star-rating">
-                        <input type="radio" name="rating" id="star5" value="5"><label for="star5" class="star">★</label>
-                        <input type="radio" name="rating" id="star4" value="4"><label for="star4" class="star">★</label>
-                        <input type="radio" name="rating" id="star3" value="3"><label for="star3" class="star">★</label>
-                        <input type="radio" name="rating" id="star2" value="2"><label for="star2" class="star">★</label>
-                        <input type="radio" name="rating" id="star1" value="1"><label for="star1" class="star">★</label>
-                    </div>
-                    <label for="opinion">OPINIÓN:</label>
-                    <textarea id="opinion" rows="4" style="width: 100%; border-radius: 5px; border: 1px solid #ccc; padding: 10px;"></textarea>
-                    <button class="btn-primary" type="button">ENVIAR</button>
-                </div>            
-            </div>
         `;
+        // Mostrar productos relacionados
+        let relatedProductsContainer = document.getElementById("related-products");
+
+        product.relatedProducts.forEach(related => {
+            let relatedProductHTML = `
+            <div class="col-6 col-md-4">
+                <div class="product-card" data-product-id="${related.id}">
+                    <img src="${related.image}" alt="${related.name}">
+                    <h2>${related.name}</h2>
+                </div>
+            </div>
+            `;
+            relatedProductsContainer.innerHTML += relatedProductHTML;
+        });
+
+        // Agregar event listeners a los productos relacionados para la redirección
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.addEventListener('click', function() {
+                let selectedProductId = this.getAttribute('data-product-id');
+                
+                // Guardar el ID del producto seleccionado en el localStorage
+                localStorage.setItem("productID", selectedProductId);
+                
+                // Recargar la página para mostrar el nuevo producto
+                window.location.reload();
+                
+            });
+        });
     } catch (error) {
         console.error("Error al cargar el producto:", error);
     }
@@ -101,3 +113,10 @@ document.addEventListener('DOMContentLoaded', async function () {
         });
     }
 });
+
+// Función para seleccionar un producto y redirigir a su información
+
+function selectProduct(productId) {
+    localStorage.setItem("productID", productId);
+    window.location.href = 'product-info.html'; 
+}

@@ -419,3 +419,13 @@ input[type="password"]:focus {
   line-height: 1.5em;
 }
 
+/*===PRODUCTOS RELACIONADOS===*/
+#related-products-container {
+  margin-top: 2rem;
+  background: linear-gradient(to bottom, rgba(197, 66, 99, 0.8) 0%, rgba(70, 31, 86, 0.8) 100%);
+  padding: 1rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.3);
+  height: auto; 
+  max-width: 50rem; 
+}
