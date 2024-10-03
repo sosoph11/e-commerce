@@ -1,5 +1,15 @@
+:root {
+  --color-navbar: #461F56;
+  --color-button: #EDC235;
+  --color-button-hover: #FFD700;
+  --color-footer: #0E0425;
+  --color-text: #FFFFFF;
+  --color-comment-text: #f1f1f1;
+  --color-star: #EDC235;
+}
+
 body {
-  background-color: #9eabb156;
+  background-color: linear-gradient(to right, #484f52, #97a2a6, #484f52);
   font-family: 'Raleway', sans-serif;
 }
 
@@ -263,10 +273,10 @@ input[type="password"]:focus {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  background-color: rgba(255, 255, 255, 0.8); 
+  background: linear-gradient(to bottom, rgba(197, 66, 99, 0.8), rgba(70, 31, 86, 0.8));
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   margin-top: 20px;
 }
 
@@ -327,14 +337,14 @@ input[type="password"]:focus {
 
 /* Estilo para la sección de calificación */
 .rating-section {
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 2rem; /* Usar rem para padding */
-  border-radius: 0.625rem; /* 10px en rem */
-  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* 4px y 8px en rem */
-  margin-top: 2rem; /* 20px en rem */
-  max-width: 37.5rem; /* 600px en rem */
-  margin-left: auto;
-  margin-right: auto;
+  margin-top: 1.5rem;
+  background: linear-gradient(to bottom, rgba(197, 66, 99, 0.8) 0%, rgba(70, 31, 86, 0.8) 100%);
+  margin: auto;
+  margin-top: 2rem;
+  padding: 1rem;
+  max-width: 50rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.3);
 }
 
 .rating-section h2 {
@@ -422,10 +432,25 @@ input[type="password"]:focus {
 /*===PRODUCTOS RELACIONADOS===*/
 #related-products-container {
   margin-top: 2rem;
-  background: linear-gradient(to bottom, rgba(197, 66, 99, 0.8) 0%, rgba(70, 31, 86, 0.8) 100%);
+  background: linear-gradient(to bottom, rgba(224, 78, 114, 0.5), rgba(70, 31, 86, 0.8));
   padding: 1rem;
-  border-radius: 1.5rem;
-  box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.3);
-  height: auto; 
-  max-width: 50rem; 
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  max-width: 414px;
+}
+
+#related-products h3 {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  letter-spacing: 0.2em; /* 20% */
+  text-align: center;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+}
+
+#related-products .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
