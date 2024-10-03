@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', async function () {
     // URL de la API para obtener la información del producto
     let url = `https://japceibal.github.io/emercado-api/products/${productID}.json`;
     
+     // URL de la API para obtener los comentarios del producto
+    let productsComments = `https://japceibal.github.io/emercado-api/products_comments/${productID}.json`
+
     try {
         let response = await fetch(url);
         let product = await response.json();
@@ -58,5 +61,43 @@ document.addEventListener('DOMContentLoaded', async function () {
         `;
     } catch (error) {
         console.error("Error al cargar el producto:", error);
+    }
+
+    // Fetch comentarios de productos
+    fetch(productsComments)
+    .then(response => response.json())
+    .then(data => {
+        displayComments(data);
+    })
+    .catch(error => {
+        console.error("Error fetching comments:", error);
+    });
+    
+    // Función para mostrar los comentarios en pantalla
+    function displayComments(comments) {
+        const commentsList = document.getElementById('comments-list');
+        commentsList.innerHTML = ''; // Limpiar la lista antes de agregar nuevos comentarios
+    
+        comments.forEach(comment => {
+            const commentElement = document.createElement('div');
+            commentElement.classList.add('comment');
+    
+            // Generar estrellas en el puntaje
+            let stars = '';
+        for (let i = 1; i <= comment.score; i++) {
+            stars += '<i class="fas fa-star"></i>';
+        }
+    
+            commentElement.innerHTML = `
+                <div class="comment-header">
+                    <span class="user">${comment.user}</span>
+                    <span class="date">${new Date(comment.dateTime).toLocaleDateString()}</span>
+                </div>
+                <div class="comment-rating">${stars}</div>
+                <div class="comment-text">${comment.description}</div>
+            `;
+    
+            commentsList.appendChild(commentElement);
+        });
     }
 });

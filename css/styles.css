@@ -372,4 +372,50 @@ input[type="password"]:focus {
   color: #FFD700;
 }
 
+/* Estilo para la sección de comentarios */
+#comments-section {
+  margin-top: 1.5rem;
+  background: linear-gradient(to bottom, rgba(197, 66, 99, 0.8) 0%, rgba(70, 31, 86, 0.8) 100%);
+  margin: 0 auto;
+  padding: 1rem;
+  max-width: 50rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.3);
+}
+
+.comment {
+  border-bottom: 0.1rem solid #ddd;
+  padding: 1rem 0;
+}
+
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+.comment-header .user {
+  font-size: 1em;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  color: #f1f1f1;
+}
+
+.comment-header .date {
+  font-size: 0.9em;
+    color: #ccc;
+    margin-left: 1rem;
+}
+
+.comment-rating {
+  color: #ffdf00;
+  margin-right: 1rem;
+  font-size: 1.5em;
+}
+
+.comment-text {
+  margin-top: 0.9rem;
+  font-size: 1em;
+  color: #f1f1f1;
+  line-height: 1.5em;
+}
 
