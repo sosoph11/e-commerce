@@ -13,23 +13,18 @@ body {
   font-family: 'Raleway', sans-serif;
 }
 
-.navbar-dark .navbar-nav .nav-link {
-  color: rgba(255, 255, 255, 0.75);
-}
-
-.navbar-dark .navbar-nav .nav-link:hover {
-  color: #fff;
-}
-.navbar-nav {
+.navbar .navbar-nav .nav-link {
+  color: rgb(243, 237, 241);
   display: flex;
   justify-content: space-between; 
   align-items: center; 
   width: 100%; 
 }
 
+/*info de productos*/
 .text-center.my-4 {
-  background-color: #142326;
-  color: #fff;
+  background: linear-gradient(to bottom, rgba(62, 1, 63, 0.936), rgba(114, 6, 105, 0.8));
+  color: #d8f632;
   padding: 20px;
   font-size: 2em;
   font-weight: bold;
@@ -39,14 +34,13 @@ body {
 }
 
 .product-card {
-  background-color: #fff;
-  color: #000;
-  border: 1px solid #D1D1D1;
-  border-radius: 5px;
-  padding: 15px;
+  background-color: #4f0645ac;
+  color: #f5f5f3;
+  border-radius: 1em;
+  padding: 1em;
   margin-bottom: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s;
+  transition: transform 0.1s;
   width: 100%;
   max-width: 300px;
 }
@@ -58,7 +52,7 @@ body {
 .product-card img {
   max-width: 100%;
   height: auto;
-  border-radius: 5px;
+  border-radius: 0.5em;
   margin-bottom: 10px;
 }
 
@@ -83,7 +77,7 @@ body {
 
 .product-card .sold {
   font-size: 0.85em;
-  color: gray;
+  color: rgb(239, 229, 47);
   text-align: center;
   margin-top: 5px;
 }
@@ -156,16 +150,15 @@ body {
 
 footer {
   padding: 20px 0;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  background: linear-gradient(to right,#03423f, #0e0124);
-  border-top: 0.0625rem solid #03396e;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background: linear-gradient(to right,#190526, #220344);
   width: 100%;
   margin-top: 40px;
 }
 
 footer p {
-  margin-bottom: .25rem;
+  color: rgb(255, 255, 255);
 }
 
 .site-header a {
@@ -188,15 +181,16 @@ footer p {
 h2 {
     text-align: center;
     margin-bottom: 1.25rem;
-    color: #333;
+    color: #f1edf0;
     font-weight: bold;
 }
 
-
 label {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.2em;
     display: block;
     margin-bottom: 0.2rem;
-    color:#181717;
+    color:var(--color-text);
 }
 
 
@@ -232,11 +226,11 @@ input[type="password"]:focus {
 
 
 .btn-primary:hover {
-    background-color: #000ed9;
+    background-color: #f0f0479e;
 }
 
 .soon-card {
-  background-color: rgba(0, 0, 0, 0.5); 
+  background-color: rgba(222, 186, 219, 0.5); 
   color: white;
   border: 1px solid #D1D1D1;
   border-radius: 5px;
@@ -263,7 +257,44 @@ input[type="password"]:focus {
 
 .catName {
   font-weight: bold; /* Pone en negrita el texto */
-  color: rgba(161, 197, 32, 0.872); /* Cambia el color de la categoría */
+  color: rgba(195, 236, 83, 0.872); /* Cambia el color de la categoría */
+}
+
+/* Estilos para el grupo de botones de ordenamiento */
+.btn-group-toggle .btn {
+  background-color: #f0f0f0; /* Color de fondo */
+  border: 0.1em solid #ccc; /* Borde */
+  color: #333; /* Color del texto */
+  padding: 0.5rem 1rem; /* Espaciado interno */
+  border-radius: 0.375rem; /* Bordes redondeados */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transiciones suaves */
+}
+
+/* Efecto hover para los botones de ordenamiento */
+.btn-group-toggle .btn:hover {
+  background-color: #e0e0e0; /* Color al pasar el mouse */
+  color: #000; /* Color del texto al pasar el mouse */
+}
+
+/* Estilos para la sección de precio */
+.text-end p {
+  font-weight: bold; /* Negrita para el texto */
+  color: #555; /* Color del texto */
+}
+
+/* Estilos para los botones de filtro */
+.btn-group button {
+  background-color: #a41f50d5; /* Color de fondo del botón */
+  color: rgb(203, 240, 69); /* Color del texto */
+  border: none; /* Sin borde */
+  border-radius: 0.375rem; /* Bordes redondeados */
+  padding: 0.5rem 0.7em; /* Espaciado interno */
+  transition: background-color 0.3s ease; /* Transición suave */
+}
+
+/* Efecto hover para los botones de filtro */
+.btn-group button:hover {
+  background-color: #f9f2f2a9; /* Color al pasar el mouse */
 }
 
 /*==ESTILOS PARA INFORMACION DE PRODUCTO */
@@ -314,28 +345,39 @@ input[type="password"]:focus {
   font-size: 3em;
   font-weight: bold;
   margin-bottom: 20px;
-  color: #000;
+  color: #342803;
 }
 
 #product-info-container p {
   font-size: 1.1em;
-  color: #555;
+  color: #f5efef;
   margin-bottom: 10px;
 }
 
 /* Precio*/
 #product-price {
   font-size: 2em; 
-  color: #333; 
+  color: #efe8ec; 
 }
 
 /* Vendidos*/
 #sold-count {
-  color: rgba(0, 0, 0, 0.295); 
+  color: rgba(245, 245, 245, 0.295); 
   font-size: 1em; 
 }
 
 /* Estilo para la sección de calificación */
+
+#opinion {
+  width: 100%; /* Ancho completo */
+  border-radius: 5px; /* Bordes redondeados */
+  border: 1px solid #ccc; /* Borde gris */
+  padding: 10px; /* Espaciado interno */
+  margin-top: 0.5rem; /* Espaciado superior */
+  resize: vertical; /* Permitir cambiar tamaño solo verticalmente */
+  background-color: #ede3e8d3;
+}
+
 .rating-section {
   margin-top: 1.5rem;
   background: linear-gradient(to bottom, rgba(197, 66, 99, 0.8) 0%, rgba(70, 31, 86, 0.8) 100%);
@@ -348,10 +390,11 @@ input[type="password"]:focus {
 }
 
 .rating-section h2 {
+  font-family: 'Rajdhani', sans-serif;
   font-size: 1.5em; /* Mantener tamaño relativo */
   margin-bottom: 2rem; /* 20px en rem */
   text-align: center;
-  color: #333;
+  color: var(--color-text);
 }
 
 .star-rating {
@@ -391,6 +434,7 @@ input[type="password"]:focus {
   max-width: 50rem;
   border-radius: 1.5rem;
   box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.3);
+  color: white
 }
 
 .comment {
@@ -407,7 +451,7 @@ input[type="password"]:focus {
   font-size: 1em;
   font-weight: bold;
   letter-spacing: 0.05em;
-  color: #f1f1f1;
+  color: #330224;
 }
 
 .comment-header .date {
