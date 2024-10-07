@@ -99,11 +99,16 @@ document.addEventListener('DOMContentLoaded', async function () {
         for (let i = 1; i <= comment.score; i++) {
             stars += '<i class="fas fa-star"></i>';
         }
+
+        // Convertir la fecha y hora
+        const commentDate = new Date(comment.dateTime);
+        const formattedDate = commentDate.toLocaleDateString(); // Fecha
+        const formattedTime = commentDate.toLocaleTimeString(); // Hora
     
             commentElement.innerHTML = `
                 <div class="comment-header">
                     <span class="user">${comment.user}</span>
-                    <span class="date">${new Date(comment.dateTime).toLocaleDateString()}</span>
+                    <span class="date">${formattedDate} ${formattedTime}</span>
                 </div>
                 <div class="comment-rating">${stars}</div>
                 <div class="comment-text">${comment.description}</div>
@@ -112,6 +117,57 @@ document.addEventListener('DOMContentLoaded', async function () {
             commentsList.appendChild(commentElement);
         });
     }
+    // Capturar el botón de "ENVIAR"
+    const submitButton = document.getElementById('submit-rating');
+
+    // Agregar un event listener al botón para simular el envío de la calificación
+    submitButton.addEventListener('click', function () {
+        // Obtener la calificación seleccionada
+        const selectedRating = document.querySelector('input[name="rating"]:checked');
+
+        // Obtener la opinión del textarea
+        const opinionText = document.getElementById('opinion').value;
+
+        // Validar que se haya seleccionado una calificación y que haya un texto de opinión
+        if (!selectedRating || opinionText.trim() === '') {
+            alert("Por favor, selecciona una calificación y escribe tu opinión.");
+            return;
+        }
+
+        // Simular la fecha y hora actual
+        const currentDateTime = new Date();
+        const formattedDate = currentDateTime.toLocaleDateString();
+        const formattedTime = currentDateTime.toLocaleTimeString();
+
+        // Crear estrellas según la calificación seleccionada
+        let stars = '';
+        for (let i = 1; i <= selectedRating.value; i++) {
+            stars += '<i class="fas fa-star"></i>';
+        }
+
+        // Crear el nuevo comentario
+        const newComment = `
+            <div class="comment">
+                <div class="comment-header">
+                    <span class="user">Usuario</span> <!-- Simular nombre de usuario -->
+                    <span class="date">${formattedDate} ${formattedTime}</span>
+                </div>
+                <div class="comment-rating">${stars}</div>
+                <div class="comment-text">${opinionText}</div>
+            </div>
+        `;
+
+        // Agregar el nuevo comentario a la lista de comentarios
+        const commentsList = document.getElementById('comments-list');
+        commentsList.innerHTML += newComment;
+
+        // Limpiar el formulario (deseleccionar la calificación y limpiar el texto)
+        document.querySelector('input[name="rating"]:checked').checked = false;
+        document.getElementById('opinion').value = '';
+
+        // Mensaje de confirmación
+        alert("Tu calificación ha sido añadida.");
+    });
 });
 
 // Función para seleccionar un producto y redirigir a su información
