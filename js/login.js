@@ -1,6 +1,6 @@
 // Verificar si está autenticado
 document.addEventListener('DOMContentLoaded', function() {
-    let isAuthenticated = localStorage.getItem('isAuthenticated');
+    let isAuthenticated = localStorage.getItem('isAuthenticated'); 
     let currentPage = window.location.pathname.split('/').pop(); 
 
     // Si no está autenticado y no está en la página de login, redirigir a login.html
