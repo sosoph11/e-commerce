@@ -9,18 +9,104 @@
 }
 
 body {
-  background-color: linear-gradient(to right, #484f52, #97a2a6, #484f52);
+  background-color: #19181e;
   font-family: 'Raleway', sans-serif;
 }
 
+/*===BARRA DE NAVEGACIÓN===*/
+
+/*Barra de navegación*/
+nav{
+  background-color: #0E0425;
+  border-radius: 20px;
+  width: 80%;
+  margin:auto;
+}
+/*botones, links*/
 .navbar .navbar-nav .nav-link {
-  color: rgb(243, 237, 241);
-  display: flex;
-  justify-content: space-between; 
-  align-items: center; 
-  width: 100%; 
+  color: #e05165;
+  margin-left: 5rem;
+  background-color: #EDC235;
+  border-radius: 15px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
+/*===LOGIN===*/
+
+.login-container {
+  margin: auto;
+  background-color: #100c1b; 
+  padding: 2rem;
+  border-radius: 0.625rem;
+  box-shadow: 0 0 1rem #ffcc31;
+  width: 24rem;
+}
+.banner {
+  margin-bottom: 20px; 
+}
+.banner img {
+  max-width: 100%; 
+  height: auto; 
+  border-radius: 10px; 
+}
+.login-container h2{
+  text-align: center;
+  margin-bottom: 1.25rem;
+  color: #EDC235;
+  font-weight: bold;
+}
+.login-container label{
+  color: #ffcc31;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.2em;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+.login-container input[type="text"],
+input[type="password"] {
+  background-color: #d08794;
+  width: 100%;
+  padding: 0.625rem;
+  border: 0.0625rem solid #693747;
+  border-radius: 0.625rem;
+  box-sizing: border-box;
+  font-weight: lighter;
+}
+.login-container input[type="text"]:focus,
+input[type="password"]:focus {
+  outline: none;
+  border-color: #edc235;
+  background-color: #693747;
+}
+.login-container input[type="text"]::placeholder,
+input[type="password"]::placeholder {
+  color: #190526;
+}
+.login-container .btn-primary {
+  background-color: #e05165;
+  color: #ffcc31;
+  font-weight: bold;
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 0.625rem;
+  cursor: pointer;
+  width: 100%;
+}
+.login-container .btn-primary:hover {
+  background-color: #e21934;
+}
+.login-container .btn-secondary{
+  color: #ffcc31;
+  font-weight: bold;
+  background: none;
+  border: none;
+  margin-top: 1rem;
+}
+.login-container .btn-secondary:hover {
+  color: #e21934;
+}
 /*info de productos*/
 .text-center.my-4 {
   background: linear-gradient(to bottom, rgba(62, 1, 63, 0.936), rgba(114, 6, 105, 0.8));
@@ -170,64 +256,6 @@ footer p {
   color: black;
 }
 
-.login-container {
-  background-color:#e0dcdc;
-    padding: 2rem;
-    border-radius: 0.625rem;
-    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
-    width: 21.8rem;
-}
-
-h2 {
-    text-align: center;
-    margin-bottom: 1.25rem;
-    color: #f1edf0;
-    font-weight: bold;
-}
-
-label {
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 1.2em;
-    display: block;
-    margin-bottom: 0.2rem;
-    color:var(--color-text);
-}
-
-
-input[type="text"],
-input[type="password"] {
-    width: 100%;
-    padding: 0.625rem;
-    margin-bottom: 1.5625rem;
-    margin-top: -0.3125rem;
-    border: 0.0625rem solid #ccc;
-    border-radius: 0.625rem;
-    box-sizing: border-box;
-    font-weight: lighter;
-}
-
-
-input[type="text"]:focus,
-input[type="password"]:focus {
-    outline: none;
-    border-color: #0011ff;
-}
-
-
-.btn-primary {
-    background-color: #020f0a;
-    color: white;
-    padding: 0.75rem 1.25rem;
-    border: none;
-    border-radius: 0.625rem;
-    cursor: pointer;
-    width: 100%;
-}
-
-
-.btn-primary:hover {
-    background-color: #f0f0479e;
-}
 
 .soon-card {
   background-color: rgba(222, 186, 219, 0.5); 

@@ -47,3 +47,23 @@ function handleLogin() {
   
   // Event listener para el botón "Ingresar"
   document.getElementById('login-button').addEventListener('click', handleLogin);
+
+  
+  // Función para ingresar como invitado
+  document.getElementById('guest-button').addEventListener('click', function() {
+  // Simular inicio de sesión como invitado
+  const guestUsername = "invitado"; 
+  const guestPassword = ""; 
+
+  // Guardar la sesión como invitado
+  localStorage.setItem('isAuthenticated', 'true');
+  localStorage.setItem('username', guestUsername);
+
+  // Mostrar mensaje de "Ingreso exitoso"
+  showAlertSuccess('¡Ingreso como invitado exitoso! Redirigiendo a la página de portada...');
+
+  // Redirigir a la página de portada después de 2 segundos
+  setTimeout(function() {
+      window.location.href = 'index.html'; 
+  }, 2000);
+});
