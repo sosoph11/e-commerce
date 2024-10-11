@@ -7,7 +7,7 @@
   --color-comment-text: #f1f1f1;
   --color-star: #EDC235;
 }
-
+/*GENERALES (aplican en todas las paginas)*/
 body {
   background-color: #19181e;
   font-family: 'Raleway', sans-serif;
@@ -17,7 +17,7 @@ body {
 
 /*Barra de navegación*/
 nav{
-  background-color: #0E0425;
+  background-color: #461F56;
   border-radius: 20px;
   width: 80%;
   margin:auto;
@@ -107,6 +107,88 @@ input[type="password"]::placeholder {
 .login-container .btn-secondary:hover {
   color: #e21934;
 }
+
+/*===PRODUCT-INFO===*/
+
+#product-info main {
+  background-color: #0E0425;
+  width: 80%;
+  margin: auto;
+  border-radius: 20px;
+}
+#product-info main .container{
+  margin-top: 2rem;
+  padding: 2rem;
+  padding-bottom: 2rem;
+}
+/*INFO DE PRODUCTOS*/
+
+/* contenedor */
+#product-info-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: linear-gradient(to bottom, rgba(197, 66, 99, 0.8), rgba(70, 31, 86, 0.8));
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* imagen */
+#product-info-container .col-md-6:first-child {
+  flex: 1;
+  margin-right: 20px;
+}
+
+#product-info-container .col-md-6 img {
+  width: 100%; 
+  height: auto;
+  border-radius: 10px; 
+}
+
+/* carousel */
+#product-images {
+  margin-top: 20px;
+}
+
+#product-images .carousel-control-prev-icon,
+#product-images .carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.5); 
+}
+
+/* informacion */
+#product-info-container .col-md-6:last-child {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#product-info-container h1 {
+  font-size: 3em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #342803;
+}
+
+#product-info-container p {
+  font-size: 1.1em;
+  color: #f5efef;
+  margin-bottom: 10px;
+}
+
+/* Precio*/
+#product-price {
+  font-size: 2em; 
+  color: #efe8ec; 
+}
+
+/* Vendidos*/
+#sold-count {
+  color: rgba(245, 245, 245, 0.295); 
+  font-size: 1em; 
+}
+
 /*info de productos*/
 .text-center.my-4 {
   background: linear-gradient(to bottom, rgba(62, 1, 63, 0.936), rgba(114, 6, 105, 0.8));
@@ -325,74 +407,6 @@ footer p {
   background-color: #f9f2f2a9; /* Color al pasar el mouse */
 }
 
-/*==ESTILOS PARA INFORMACION DE PRODUCTO */
-
-/* contenedor */
-#product-info-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  background: linear-gradient(to bottom, rgba(197, 66, 99, 0.8), rgba(70, 31, 86, 0.8));
-  padding: 20px;
-  border-radius: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  margin-top: 20px;
-}
-
-/* imagen */
-#product-info-container .col-md-6:first-child {
-  flex: 1;
-  margin-right: 20px;
-}
-
-#product-info-container .col-md-6 img {
-  width: 100%; 
-  height: auto;
-  border-radius: 10px; 
-}
-
-/* carousel */
-#product-images {
-  margin-top: 20px;
-}
-
-#product-images .carousel-control-prev-icon,
-#product-images .carousel-control-next-icon {
-  background-color: rgba(0, 0, 0, 0.5); 
-}
-
-/* informacion */
-#product-info-container .col-md-6:last-child {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-#product-info-container h1 {
-  font-size: 3em;
-  font-weight: bold;
-  margin-bottom: 20px;
-  color: #342803;
-}
-
-#product-info-container p {
-  font-size: 1.1em;
-  color: #f5efef;
-  margin-bottom: 10px;
-}
-
-/* Precio*/
-#product-price {
-  font-size: 2em; 
-  color: #efe8ec; 
-}
-
-/* Vendidos*/
-#sold-count {
-  color: rgba(245, 245, 245, 0.295); 
-  font-size: 1em; 
-}
 
 /* Estilo para la sección de calificación */
 

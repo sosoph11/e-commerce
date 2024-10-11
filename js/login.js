@@ -13,12 +13,28 @@ document.addEventListener('DOMContentLoaded', function() {
 function handleLogin() {
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
-  
+
+    // Expresión regular para validar un email
+    let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
     // Validar que los campos no estén vacíos
     if (username.trim() === '' || password.trim() === '') {
       showAlertError('Por favor, completa todos los campos.');
       return;
     }
+
+    // Validar que el username sea un email válido
+    if (!emailRegex.test(username)) {
+      showAlertError('Por favor, ingresa un email válido.');
+      return;
+    }
+
+    // Validar que la contraseña tenga al menos 6 caracteres
+    if (password.length < 6) {
+      showAlertError('La contraseña debe tener al menos 6 caracteres.');
+      return;
+  }
+
    //Guarda la sesión si la autenticación es exitosa 
     localStorage.setItem('isAuthenticated', 'true');
 

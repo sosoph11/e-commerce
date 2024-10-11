@@ -169,10 +169,3 @@ document.addEventListener('DOMContentLoaded', async function () {
         alert("Tu calificación ha sido añadida.");
     });
 });
-
-// Función para seleccionar un producto y redirigir a su información
-
-function selectProduct(productId) {
-    localStorage.setItem("productID", productId);
-    window.location.href = 'product-info.html'; 
-}
