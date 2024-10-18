@@ -8,22 +8,6 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
-  <style>
-    .bd-placeholder-img {
-      font-size: 1.125rem;
-      text-anchor: middle;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-    }
-
-    @media (min-width: 768px) {
-      .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-      }
-    }
-  </style>
 </head>
 
 <body>
@@ -58,16 +42,10 @@
   <main class="container mt-4 perfil-section">
     <h2>Mi Perfil</h2>
     <div class="text-center">
-        <img id="profile-pic" src="default-pic.jpg" alt="Foto de perfil" style="width: 150px; height: 150px; border-radius: 50%;">
+        <img id="profile-pic" src="default-pic.jpg" alt="Foto de perfil">
         <br>
         <input type="file" id="upload" accept="image/*">
         <br>
-        <label for="width">Ancho:</label>
-        <input type="number" id="width" value="150" min="50" style="width: 60px;">
-        <label for="height">Alto:</label>
-        <input type="number" id="height" value="150" min="50" style="width: 60px;">
-        <br>
-        <button id="resize-btn" class="btn btn-secondary mt-2">Ajustar Tamaño</button>
         <button id="delete-btn" class="btn btn-danger mt-2">Eliminar Foto</button>
         <button id="save-btn" class="btn btn-primary mt-2">Guardar Cambios</button>
     </div>
@@ -86,5 +64,4 @@
   <script src="js/init.js"></script>
   <script src="js/my-profile.js"></script>
 </body>
-
 </html>

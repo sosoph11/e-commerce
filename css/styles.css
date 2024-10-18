@@ -591,8 +591,7 @@ footer p {
   gap: 20px;
 }
 
-/*SECCION DE PERFIL*/
-
+/*===SECCION DE PERFIL===*/
 .perfil-section {
   display: flex;
   flex-direction: column; /* Organiza los elementos en una columna */
@@ -610,22 +609,84 @@ footer p {
 }
 
 .perfil-section h2 {
-  margin-bottom: 20px; /* Espaciado debajo del título */
-  color:white
+  margin-bottom: 2em; /* Espaciado debajo del título */
+  color: #ffffff;
+  font-size: 2.5rem; /* Tamaño del título */
+  letter-spacing: 2px; /* Espaciado entre letras */
+  text-transform: uppercase; /* Todo en mayúsculas */
+  font-weight: bold; /* Negrita para resaltar el título */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra de texto para contraste */
+}
+
+/* Estilos generales para la sección */
+input[type="number"] {
+  width: 20%; /* Ajuste responsivo basado en porcentaje */
+  max-width: 80px; /* Ancho máximo en pantallas grandes */
+  padding: 0.5rem; /* Uso de rem para mantener consistencia */
+  margin: 0 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem; /* Tamaño de texto en rem para adaptarse a la raíz */
+  text-align: center;
+}
+
+/* Estilos para las etiquetas */
+label {
+  font-size: 1.1rem; /* Tamaño adaptable */
+  margin-right: 0.5rem;
+}
+
+/* Estilos para mejorar la alineación */
+input[type="number"],
+label {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  input[type="number"] {
+    width: 30%; /* Ancho mayor para pantallas pequeñas */
+  }
+
+  label {
+    font-size: 0.9rem; /* Reducción de tamaño en pantallas más pequeñas */
+  }
+}
+
+@media (max-width: 480px) {
+  input[type="number"] {
+    width: 40%; /* Aumentar el ancho en pantallas muy pequeñas */
+  }
+
+  label {
+    display: block; /* Colocar etiquetas y inputs en línea vertical */
+    margin-bottom: 0.5rem;
+  }
+
+  input[type="number"] {
+    margin-bottom: 1rem; /* Separación entre campos */
+  }
 }
 
 .perfil-section .btn {
-  margin-top: 10px; /* Espaciado encima del botón */
+  margin-top: 5em; /* Espaciado encima del botón */
   border-radius: 2em;
   color: white;
+  
 }
 
 #profile-pic {
-  width: 150px; /* Tamaño por defecto */
-  height: 150px; /* Tamaño por defecto */
+  width: 10rem; /* Tamaño por defecto (equivalente a 150px) */
+  height: 10rem; /* Tamaño por defecto (equivalente a 150px) */
   border-radius: 50%; /* Para hacerla redonda */
   object-fit: cover; /* Ajusta la imagen dentro del contenedor */
   background-color: #e0e0e0; /* Color de fondo por defecto */
+  margin-bottom: 3rem; /* Espacio inferior en rem */
+}
+
+#profile-pic:hover {
+  transform: scale(1.5);
 }
 
 #navbar-profile-pic {
@@ -634,32 +695,40 @@ footer p {
   border-radius: 50%; /* Hace que la imagen sea redonda */
 }
 
-button {
-  margin: 5px; /* Espacio entre botones */
-  padding: 10px 15px; /* Espaciado interno para botones */
-  font-size: 16px; /* Tamaño de fuente para botones */
-  border-radius: 5px; /* Bordes redondeados para botones */
-}
-
-/*boton ajustar tamaño*/
-.btn-secondary {
-  background-color: #8f17db; /* Color de fondo del botón secundario */
-  color: white; /* Color de texto del botón secundario */
-}
-/*boton eliminar*/
+/* Botón de eliminar */
 .btn-danger {
   background-color: #dc3545; /* Color de fondo del botón de eliminar */
   color: white; /* Color de texto del botón de eliminar */
-}
-/*boton guardar*/
-.btn-primary {
-  background-color: #de21cb; /* Color de fondo del botón de guardar */
-  color: white; /* Color de texto del botón de guardar */
+  padding: 8px 8px; /* Tamaño del botón */
+  border: 2px solid #dc3545; /* Línea del borde */
+  border-radius: 5px; /* Borde redondeado */
+  font-size: 1rem; /* Tamaño del texto */
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
+  transition: background-color 0.3s ease, border-color 0.3s ease; /* Transiciones suaves */
 }
 
-button:hover {
-  opacity: 0.9; /* Efecto de hover para todos los botones */
+.btn-danger:hover {
+  background-color: #811d27; /* Color de fondo en hover */
+  border-color: #c82333; /* Cambia el color del borde en hover */
 }
+
+/* Botón de guardar */
+.btn-primary {
+  background-color: #ee51dec2; /* Color de fondo del botón de guardar */
+  color: white; /* Color de texto del botón de guardar */
+  padding: 8px 8px; /* Tamaño del botón */
+  border: 2px solid #ee51dec2; /* Línea del borde */
+  border-radius: 5px; /* Borde redondeado */
+  font-size: 1rem; /* Tamaño del texto */
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
+  transition: background-color 0.3s ease, border-color 0.3s ease; /* Transiciones suaves */
+}
+
+.btn-primary:hover {
+  background-color: #902380; /* Color de fondo en hover */
+  border-color: #d73fc1; /* Cambia el color del borde en hover */
+}
+
 
 #navbar-profile-pic {
   width: 3rem; /* Tamaño de la imagen en la barra de navegación*/

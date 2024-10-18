@@ -34,18 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
         navbarProfilePic.src = profilePic.src; // Actualiza la imagen en la barra de navegación
         alert("Foto de perfil guardada."); // Mensaje de confirmación
     });
-        // Ajustar el tamaño de la imagen
-        resizeBtn.addEventListener("click", () => {
-            let newWidth = parseInt(widthInput.value);
-            let newHeight = parseInt(heightInput.value);
-    
-            if (newWidth > 0 && newHeight > 0) {
-                profilePic.style.width = newWidth + 'px';
-                profilePic.style.height = newHeight + 'px';
-            } else {
-                alert("Por favor, ingresa dimensiones válidas.");
-            }
-        });
        // Eliminar la foto
     deleteBtn.addEventListener("click", () => {
         profilePic.src = 'default-pic.jpg'; // Restablecer a la imagen predeterminada
