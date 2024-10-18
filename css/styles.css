@@ -9,7 +9,7 @@
 }
 /*GENERALES (aplican en todas las paginas)*/
 body {
-  background-color: #19181e;
+  background-color: #e3dde3;
   font-family: 'Raleway', sans-serif;
 }
 
@@ -142,14 +142,14 @@ input[type="password"]::placeholder {
 
 /*===PRODUCT-INFO===*/
 
-#product-info main {
-  background-color: #0E0425;
+.product-info main {
+  background-color: #724e91;
   width: 80%;
   margin: auto;
   border-radius: 20px;
 }
 
-#product-info main .container{
+.product-info main .container{
   margin-top: 2rem;
   padding: 2rem;
   padding-bottom: 2rem;
@@ -294,152 +294,6 @@ input[type="password"]::placeholder {
   justify-content: center;
   gap: 20px;
 }
-
-/* Estilos de la rama master */
-
-.jumbotron,
-.card-body,
-.container,
-.site-header {
-  font-family: 'Verdana', serif !important;
-}
-
-@media (min-width: 768px) {
-  .bd-placeholder-img-lg {
-    font-size: 3.5rem;
-  }
-}
-
-.jumbotron {
-  height: 50vh;
-  padding: 5em inherit;
-  margin-bottom: 0;
-  background-color: #53C0FB;
-  background: url('../img/cover_back.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: black;
-  font-weight: bold;
-}
-
-@media (min-width: 768px) {
-  .jumbotron {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-  }
-}
-
-.jumbotron p:last-child {
-  margin-bottom: 0;
-}
-
-.jumbotron-heading {
-  font-weight: 300;
-}
-
-.jumbotron .container {
-  max-width: 40rem;
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 10px;
-  text-shadow: 1px 1px 2px grey;
-}
-
-.jumbotron .lead {
-  font-size: 38px;
-}
-
-footer {
-  padding: 20px 0;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  background: linear-gradient(to right,#190526, #220344);
-  width: 100%;
-  margin-top: 40px;
-}
-
-footer p {
-  color: rgb(255, 255, 255);
-}
-
-.site-header a {
-  color: white;
-  transition: ease-in-out color .15s;
-}
-
-.site-header .dropdown-menu a {
-  color: black;
-}
-
-
-.soon-card {
-  background-color: rgba(222, 186, 219, 0.5); 
-  color: white;
-  border: 1px solid #D1D1D1;
-  border-radius: 5px;
-  padding: 15px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  width: 100%;
-  max-width: 300px; 
-}
-
-.text-center {
-  text-align: center; /* Alinea el texto en el centro */
-  font-size: 130%; /* Aumenta el tamaño de fuente */
-  color:white /* Cambia el color del texto */
-}
-
-.p-4 {
-  padding: 16px; /* Agrega padding de 16px en todos los lados */
-}
-
-.catName {
-  font-weight: bold; /* Pone en negrita el texto */
-  color: rgba(255, 255, 0, 0.844); /* Cambia el color de la categoría */
-}
-
-/* Estilos para el grupo de botones de ordenamiento */
-.btn-group-toggle .btn {
-  background-color: #f0f0f0; /* Color de fondo */
-  border: 0.1em solid #ccc; /* Borde */
-  color: #333; /* Color del texto */
-  padding: 0.5rem 1rem; /* Espaciado interno */
-  border-radius: 0.375rem; /* Bordes redondeados */
-  transition: background-color 0.3s ease, color 0.3s ease; /* Transiciones suaves */
-}
-
-/* Efecto hover para los botones de ordenamiento */
-.btn-group-toggle .btn:hover {
-  background-color: #e0e0e0; /* Color al pasar el mouse */
-  color: #000; /* Color del texto al pasar el mouse */
-}
-
-/* Estilos para la sección de precio */
-.text-end p {
-  font-weight: bold; /* Negrita para el texto */
-  color: #f2f0f0; /* Color del texto */
-}
-
-/* Estilos para los botones de filtro */
-.btn-group button {
-  background-color: #a41f50d5; /* Color de fondo del botón */
-  color: rgb(203, 240, 69); /* Color del texto */
-  border: none; /* Sin borde */
-  border-radius: 0.375rem; /* Bordes redondeados */
-  padding: 0.5rem 0.7em; /* Espaciado interno */
-  transition: background-color 0.3s ease; /* Transición suave */
-}
-
-/* Efecto hover para los botones de filtro */
-.btn-group button:hover {
-  background-color: #f9f2f2a9; /* Color al pasar el mouse */
-}
-
 /* Estilo para la sección de calificación */
 #opinion {
   width: 100%; /* Ancho completo */
@@ -591,6 +445,151 @@ footer p {
   gap: 20px;
 }
 
+/* Estilos de la rama master */
+
+.jumbotron,
+.card-body,
+.container,
+.site-header {
+  font-family: 'Verdana', serif !important;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+.jumbotron {
+  height: 50vh;
+  padding: 5em inherit;
+  margin-bottom: 0;
+  background-color: #53C0FB;
+  background: url('../img/cover_back.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: black;
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  .jumbotron {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+.jumbotron p:last-child {
+  margin-bottom: 0;
+}
+
+.jumbotron-heading {
+  font-weight: 300;
+}
+
+.jumbotron .container {
+  max-width: 40rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  text-shadow: 1px 1px 2px grey;
+}
+
+.jumbotron .lead {
+  font-size: 38px;
+}
+
+footer {
+  padding: 20px 0;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background: linear-gradient(to right,#190526, #220344);
+  width: 100%;
+  margin-top: 40px;
+}
+
+footer p {
+  color: rgb(255, 255, 255);
+}
+
+.site-header a {
+  color: white;
+  transition: ease-in-out color .15s;
+}
+
+.site-header .dropdown-menu a {
+  color: black;
+}
+
+
+.soon-card {
+  background-color: rgba(222, 186, 219, 0.5); 
+  color: white;
+  border: 1px solid #D1D1D1;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  max-width: 300px; 
+}
+
+.text-center {
+  text-align: center; /* Alinea el texto en el centro */
+  font-size: 130%; /* Aumenta el tamaño de fuente */
+  color:white /* Cambia el color del texto */
+}
+
+.p-4 {
+  padding: 16px; /* Agrega padding de 16px en todos los lados */
+}
+
+.catName {
+  font-weight: bold; /* Pone en negrita el texto */
+  color: rgba(255, 255, 0, 0.844); /* Cambia el color de la categoría */
+}
+
+/* Estilos para el grupo de botones de ordenamiento */
+.btn-group-toggle .btn {
+  background-color: #f0f0f0; /* Color de fondo */
+  border: 0.1em solid #ccc; /* Borde */
+  color: #333; /* Color del texto */
+  padding: 0.5rem 1rem; /* Espaciado interno */
+  border-radius: 0.375rem; /* Bordes redondeados */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transiciones suaves */
+}
+
+/* Efecto hover para los botones de ordenamiento */
+.btn-group-toggle .btn:hover {
+  background-color: #e0e0e0; /* Color al pasar el mouse */
+  color: #000; /* Color del texto al pasar el mouse */
+}
+
+/* Estilos para la sección de precio */
+.text-end p {
+  font-weight: bold; /* Negrita para el texto */
+  color: #f2f0f0; /* Color del texto */
+}
+
+/* Estilos para los botones de filtro */
+.btn-group button {
+  background-color: #a41f50d5; /* Color de fondo del botón */
+  color: rgb(203, 240, 69); /* Color del texto */
+  border: none; /* Sin borde */
+  border-radius: 0.375rem; /* Bordes redondeados */
+  padding: 0.5rem 0.7em; /* Espaciado interno */
+  transition: background-color 0.3s ease; /* Transición suave */
+}
+
+/* Efecto hover para los botones de filtro */
+.btn-group button:hover {
+  background-color: #f9f2f2a9; /* Color al pasar el mouse */
+}
+
 /*===SECCION DE PERFIL===*/
 .perfil-section {
   display: flex;
@@ -735,4 +734,13 @@ label {
   height: 3rem; /* Tamaño de la imagen en la barra de navegación*/
   border-radius: 50%; /* Para redondear la imagen */
   margin-left: 0.625rem; /* Espaciado a la izquierda) */
+}
+
+/*===DARK_MODE===*/
+.dark-mode {
+  background-color: #0e0614;
+  color: #eff0f1;
+}
+.dark-mode main{
+  background-color: #100c1b; 
 }

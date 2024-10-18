@@ -58,4 +58,16 @@ document.addEventListener("DOMContentLoaded", () => {
       // Si hay una imagen guardada, actualiza la fuente de la imagen en la barra de navegación
       navbarProfilePic.src = savedPic;
   }
+
+  //dark-mode
+  const darkModeSwitch = document.getElementById('darkModeSwitch');
+
+  darkModeSwitch.addEventListener('change', function() {
+      document.body.classList.toggle('dark-mode');
+      localStorage.setItem('darkMode', darkModeSwitch.checked);
+  });
+
+  darkModeSwitch.checked = localStorage.getItem('darkMode') === 'true';
+  document.body.classList.toggle('dark-mode', darkModeSwitch.checked);
+
 });
