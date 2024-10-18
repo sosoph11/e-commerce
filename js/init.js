@@ -46,3 +46,16 @@ document.addEventListener('DOMContentLoaded', function() {
       document.getElementById('user-name').textContent = `${username}`;
   }
 });
+
+// Función para cargar la imagen de perfil desde localStorage
+document.addEventListener("DOMContentLoaded", () => {
+  // Obtiene el elemento de la imagen de perfil en la barra de navegación
+  let navbarProfilePic = document.getElementById("navbar-profile-pic");
+  
+  // Intenta cargar la foto de perfil guardada en localStorage
+  let savedPic = localStorage.getItem("profilePic");
+  if (savedPic) {
+      // Si hay una imagen guardada, actualiza la fuente de la imagen en la barra de navegación
+      navbarProfilePic.src = savedPic;
+  }
+});

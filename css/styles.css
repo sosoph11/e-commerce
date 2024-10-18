@@ -19,7 +19,7 @@ body {
 nav {
   background-color: #461F56;
   border-radius: 20px;
-  width: 90%; /* Ancho ajustado a un porcentaje más flexible */
+  width: 95%; /* Ancho ajustado a un porcentaje más flexible */
   max-width: 1200px; /* Limita el ancho máximo en pantallas grandes */
   margin: auto; /* Centra la barra de navegación en la pantalla */
   padding: 0.5rem 0; /* Espaciado interior, ajustable según el tamaño de la pantalla */
@@ -35,7 +35,7 @@ nav {
   font-weight: bold;
   letter-spacing: 1px;
   text-transform: uppercase;
-  padding: 0.5rem 1rem; /* Añade espacio interior al botón */
+  padding: 0.3rem 0.6rem;; /* Añade espacio interior al botón */
   font-size: 1rem; /* Tamaño de fuente flexible */
   transition: background-color 0.3s ease-in-out; /* Suaviza el cambio de color de fondo al pasar el mouse */
 }
@@ -49,9 +49,9 @@ nav {
 
   .navbar .navbar-nav .nav-link {
     font-size: 0.9rem; /* Reduce el tamaño de los botones en pantallas pequeñas */
-    margin-left: 1rem; /* Ajusta el margen de los botones */
-    margin-right: 1rem; /* Ajusta el margen de los botones */
-    padding: 0.4rem 0.8rem; /* Reduce el padding en pantallas pequeñas */
+    margin-left: 0.5rem; /* Ajusta el margen de los botones */
+    margin-right: 0.5rem; /* Ajusta el margen de los botones */
+    padding: 0.4rem 0.6rem; /* Reduce el padding en pantallas pequeñas */
   }
 }
 
@@ -589,4 +589,81 @@ footer p {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+}
+
+/*SECCION DE PERFIL*/
+
+.perfil-section {
+  display: flex;
+  flex-direction: column; /* Organiza los elementos en una columna */
+  align-items: center;    /* Centra los elementos horizontalmente */
+  justify-content: center; /* Centra los elementos verticalmente */
+  height: calc(100vh - 56px); /* Resta la altura de la navbar (aprox. 56px) */
+  margin-top: 1.5rem;
+  background: linear-gradient(to bottom, rgba(197, 66, 99, 0.8) 0%, rgba(70, 31, 86, 0.8) 100%);
+  margin: 0 auto;
+  padding: 1rem;
+  max-width: 50rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.3);
+  color: white
+}
+
+.perfil-section h2 {
+  margin-bottom: 20px; /* Espaciado debajo del título */
+  color:white
+}
+
+.perfil-section .btn {
+  margin-top: 10px; /* Espaciado encima del botón */
+  border-radius: 2em;
+  color: white;
+}
+
+#profile-pic {
+  width: 150px; /* Tamaño por defecto */
+  height: 150px; /* Tamaño por defecto */
+  border-radius: 50%; /* Para hacerla redonda */
+  object-fit: cover; /* Ajusta la imagen dentro del contenedor */
+  background-color: #e0e0e0; /* Color de fondo por defecto */
+}
+
+#navbar-profile-pic {
+  width: 40px; /* Tamaño acorde en la barra de navegación */
+  height: 40px; /* Tamaño acorde en la barra de navegación */
+  border-radius: 50%; /* Hace que la imagen sea redonda */
+}
+
+button {
+  margin: 5px; /* Espacio entre botones */
+  padding: 10px 15px; /* Espaciado interno para botones */
+  font-size: 16px; /* Tamaño de fuente para botones */
+  border-radius: 5px; /* Bordes redondeados para botones */
+}
+
+/*boton ajustar tamaño*/
+.btn-secondary {
+  background-color: #8f17db; /* Color de fondo del botón secundario */
+  color: white; /* Color de texto del botón secundario */
+}
+/*boton eliminar*/
+.btn-danger {
+  background-color: #dc3545; /* Color de fondo del botón de eliminar */
+  color: white; /* Color de texto del botón de eliminar */
+}
+/*boton guardar*/
+.btn-primary {
+  background-color: #de21cb; /* Color de fondo del botón de guardar */
+  color: white; /* Color de texto del botón de guardar */
+}
+
+button:hover {
+  opacity: 0.9; /* Efecto de hover para todos los botones */
+}
+
+#navbar-profile-pic {
+  width: 3rem; /* Tamaño de la imagen en la barra de navegación*/
+  height: 3rem; /* Tamaño de la imagen en la barra de navegación*/
+  border-radius: 50%; /* Para redondear la imagen */
+  margin-left: 0.625rem; /* Espaciado a la izquierda) */
 }
