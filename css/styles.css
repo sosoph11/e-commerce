@@ -744,3 +744,21 @@ label {
 .dark-mode main{
   background-color: #100c1b; 
 }
+
+/* Alinear el menú desplegable a la derecha */
+.dropdown-menu {
+  background-color: #EDC235;
+  border-radius: 1.1rem;
+  font-weight: bold;
+  letter-spacing: 0.06rem;
+  min-width: auto; /* Elimina el ancho mínimo predeterminado */
+  width: auto; /* Ajusta automáticamente al contenido */
+  max-width: 100%; /* Evita que se salga del contenedor */
+  padding: 0.5rem; /* Ajusta el padding si es necesario */
+  transform: translateX(50%); /* Mueve el menú hacia la derecha la mitad de su ancho */
+}
+
+.dropdown-item {
+  color:#f8f4f7
+}
+
