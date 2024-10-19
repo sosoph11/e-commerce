@@ -601,7 +601,7 @@ footer p {
   background: linear-gradient(to bottom, rgba(197, 66, 99, 0.8) 0%, rgba(70, 31, 86, 0.8) 100%);
   margin: 0 auto;
   padding: 1rem;
-  max-width: 50rem;
+  max-width: 70%;
   border-radius: 1.5rem;
   box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.3);
   color: white
@@ -610,10 +610,10 @@ footer p {
 .perfil-section h2 {
   margin-bottom: 2em; /* Espaciado debajo del título */
   color: #ffffff;
+  font-family: 'Rajdhani', sans-serif;
   font-size: 2.5rem; /* Tamaño del título */
   letter-spacing: 2px; /* Espaciado entre letras */
   text-transform: uppercase; /* Todo en mayúsculas */
-  font-weight: bold; /* Negrita para resaltar el título */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra de texto para contraste */
 }
 
@@ -760,5 +760,75 @@ label {
 
 .dropdown-item {
   color:#f8f4f7
+}
+
+/*CSS para my-profile.html*/
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container {
+ padding-top: 2rem;
+}
+
+.container h2, h4 {
+color: white;
+}
+
+.container p {
+  color:gray;
+}
+.row label {
+  color: #ffcc31;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.2em;
+  display: block;
+  margin-bottom: 0.2rem;
+
+}
+.form-label {
+  color: #ffcc31;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.2em;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.row input[type="text"] {
+  background-color: #d08794;
+  width: 100%;
+  padding: 0.625rem;
+  border: 0.0625rem solid #693747;
+  border-radius: 0.625rem;
+  box-sizing: border-box;
+  font-weight: lighter;
+}
+
+.btn-primary {
+background-color: #ffcc31;
+  color: #e05165;
+  padding: 0.55rem 1.15rem;
+  border: none;
+  border-radius: 0.625rem;
+  cursor: pointer;
+  margin-top: 0.30rem;
+}
+
+.btn-primary:hover {
+  background-color: #e21934;
+}
+
+.form-control {
+  background-color: #d08794;
+}
+
+.btn-outline-success {
+  color: #e05165;
+  background-color: #d08794;
+}
+.btn-outline-success:hover {
+  color: #e05165;
+  background-color: #e21934;
 }
 
