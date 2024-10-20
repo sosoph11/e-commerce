@@ -33,65 +33,67 @@
           </li>
           <li class="nav-item d-flex align-items-center">
             <img id="navbar-profile-pic" src="default-pic.jpg" alt="Foto de perfil" class="rounded-circle">
-        </li>
-        <li class="form-check form-switch mb-3" class="nav-item">
-          <input class="form-check-input" type="checkbox" id="darkModeSwitch">
-          <label class="form-check-label" for="darkModeSwitch">◑</label>
-        </li>
+          </li>
+          <li class="form-check form-switch mb-3" class="nav-item">
+            <input class="form-check-input" type="checkbox" id="darkModeSwitch">
+            <label class="form-check-label" for="darkModeSwitch">◑</label>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <main class="container mt-4 perfil-section">
-    <h2>Ajustes de perfil de usuario</h2>
-    <p>Actualiza los datos de tu cuenta y perfil para mantenerlos al día</p>
-    
-    <form id="profileInfo">
-      <div>
-        <h4>Información de perfil</h4>
-        <div class="row">
-          <div class="col-md-6">
-          <label for="name">Nombre*</label>
-          <input type="text" id="name" class="form-control" required>
-        </div>
-        <div class="col-md-6">
-          <label for="scnd-name">Segundo nombre</label>
-          <input type="text" id="middleName" class="form-control">
-        </div>
-        <div class="col-md-6">
-          <label for="surname">Apellido*</label>
-          <input type="text" id="surname" class="form-control" required>
-        </div>
-        <div class="col-md-6">
-          <label for="scnd-surname">Segundo apellido</label>
-          <input type="text" id="secondSurname" class="form-control">
-        </div>
-          <div class="col-md-6">
-            <label for="email">Email*</label>
-            <input type="text" id="username" class="form-control" required>
-          </div>
-          <div class="col-md-6">
-            <label for="contact-number">Teléfono de contacto</label>
-            <input type="text" id="contactNumber" class="form-control">
-          </div>  
-        </div>
-      </div>
-    </form>
-    
-    <div class="text-center">
-        <img id="profile-pic" src="default-pic.jpg" alt="Foto de perfil">
+  <main class="container mt-4 profile-container">
+    <div class="profile-section">
+      <h2>Bienvenidx a tu Perfil</h2>
+      <div class="text-center">
+        <img id="profile-pic" src="default-pic.jpg" alt="Foto de perfil" class="rounded-circle">
         <br>
         <input type="file" id="upload" accept="image/*">
         <br>
         <button id="delete-btn" class="btn btn-danger mt-2">Eliminar Foto</button>
         <button id="save-btn" class="btn btn-primary mt-2">Guardar Foto</button>
+      </div>
     </div>
-<br>
-    <button type="submit" class="btn-primary">Guardar cambios</button>
 
-</main>
-  
+    <div class="settings-section">
+      <h2>Ajustes</h2>
+      <p>Actualiza los datos de tu cuenta y perfil para mantenerlos al día</p>
+      <form id="profileInfo">
+        <div>
+          <h4>Información de perfil</h4>
+          <div class="row">
+            <div class="col-md-6">
+              <label for="name">Nombre*</label>
+              <input type="text" id="name" class="form-control" required>
+            </div>
+            <div class="col-md-6">
+              <label for="scnd-name">Segundo nombre</label>
+              <input type="text" id="middleName" class="form-control">
+            </div>
+            <div class="col-md-6">
+              <label for="surname">Apellido*</label>
+              <input type="text" id="surname" class="form-control" required>
+            </div>
+            <div class="col-md-6">
+              <label for="scnd-surname">Segundo apellido</label>
+              <input type="text" id="secondSurname" class="form-control">
+            </div>
+            <div class="col-md-6">
+              <label for="email">Email*</label>
+              <input type="text" id="username" class="form-control" required>
+            </div>
+            <div class="col-md-6">
+              <label for="contact-number">Teléfono</label>
+              <input type="text" id="contactNumber" class="form-control">
+            </div>
+          </div>
+        </div>
+        <button type="submit" id="save-changes-btn" class="btn btn-primary mt-3">Guardar cambios</button>
+      </form>
+    </div>
+  </main>
+
   <footer class="text-muted">
     <div class="container">
       <p class="float-end">

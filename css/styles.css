@@ -7,61 +7,66 @@
   --color-comment-text: #f1f1f1;
   --color-star: #EDC235;
 }
+
 /*GENERALES (aplican en todas las paginas)*/
 body {
   background-color: #e3dde3;
   font-family: 'Raleway', sans-serif;
 }
 
-/*===BARRA DE NAVEGACIÓN===*/
+/*Pagina de inicio*/
+.album h3{
+  color:#000;
+}
 
-/* Barra de navegación */
+.album .card-text{
+  color: #000;
+}
+
+/*===BARRA DE NAVEGACIÓN===*/
 nav {
   background-color: #461F56;
   border-radius: 20px;
-  width: 95%; /* Ancho ajustado a un porcentaje más flexible */
+  width: 85%; /* Ancho ajustado a un porcentaje más flexible */
   max-width: 1200px; /* Limita el ancho máximo en pantallas grandes */
   margin: auto; /* Centra la barra de navegación en la pantalla */
-  padding: 0.5rem 0; /* Espaciado interior, ajustable según el tamaño de la pantalla */
+  padding: 1rem; /* Espaciado interior ajustable */
 }
 
 /* Botones, links */
 .navbar .navbar-nav .nav-link {
-  color: #e05165; /* Establece el color del texto */
-  margin-left: 2rem; /* Reduce el margen para una mejor disposición en pantallas pequeñas */
-  margin-right: 2rem; /* Igual margen derecho para mantener la alineación */
+  color: #e05165; /* Color del texto */
+  margin: 0 1rem; /* Espaciado horizontal ajustado */
   background-color: #EDC235;
   border-radius: 17px;
   font-weight: bold;
   letter-spacing: 1px;
   text-transform: uppercase;
-  padding: 0.3rem 0.6rem;; /* Añade espacio interior al botón */
+  padding: 0.5rem 1rem; /* Espaciado interno más flexible */
   font-size: 1rem; /* Tamaño de fuente flexible */
-  transition: background-color 0.3s ease-in-out; /* Suaviza el cambio de color de fondo al pasar el mouse */
+  transition: background-color 0.3s ease-in-out; /* Suaviza el cambio de color */
 }
 
 /* Ajustes para pantallas pequeñas */
 @media (max-width: 768px) {
   nav {
     width: 95%; /* Más ancho en pantallas más pequeñas */
-    padding: 0.5rem 0; /* Mantiene el espaciado flexible */
+    padding: 0.8rem; /* Mantiene el espaciado flexible */
   }
 
   .navbar .navbar-nav .nav-link {
-    font-size: 0.9rem; /* Reduce el tamaño de los botones en pantallas pequeñas */
-    margin-left: 0.5rem; /* Ajusta el margen de los botones */
-    margin-right: 0.5rem; /* Ajusta el margen de los botones */
-    padding: 0.4rem 0.6rem; /* Reduce el padding en pantallas pequeñas */
+    font-size: 0.9rem; /* Reduce el tamaño de los botones */
+    margin: 0 0.5rem; /* Ajusta el margen */
+    padding: 0.4rem 0.8rem; /* Reduce el padding */
   }
 }
 
 /* Ajustes para pantallas más grandes */
 @media (min-width: 1200px) {
   .navbar .navbar-nav .nav-link {
-    font-size: 1.1rem; /* Aumenta el tamaño de los botones en pantallas grandes */
-    padding: 0.6rem 1.2rem; /* Ajusta el padding en pantallas grandes */
-    margin-left: 4rem; /* Espacio entre los enlaces */
-    margin-right: 4rem; /* Espacio entre los enlaces */
+    font-size: 1.1rem; /* Aumenta el tamaño de los botones */
+    padding: 0.6rem 1.2rem; /* Ajusta el padding */
+    margin: 0 2rem; /* Espacio entre los enlaces */
   }
 }
 
@@ -110,7 +115,7 @@ input[type="password"] {
 input[type="password"]:focus {
   outline: none;
   border-color: #edc235;
-  background-color: #693747;
+  background-color: #f2eeef;
 }
 .login-container input[type="text"]::placeholder,
 input[type="password"]::placeholder {
@@ -141,7 +146,6 @@ input[type="password"]::placeholder {
 }
 
 /*===PRODUCT-INFO===*/
-
 .product-info main {
   background-color: #724e91;
   width: 80%;
@@ -155,7 +159,6 @@ input[type="password"]::placeholder {
   padding-bottom: 2rem;
 }
 /*INFO DE PRODUCTOS*/
-
 /* contenedor */
 #product-info-container {
   display: flex;
@@ -590,72 +593,87 @@ footer p {
   background-color: #f9f2f2a9; /* Color al pasar el mouse */
 }
 
-/*===SECCION DE PERFIL===*/
-.perfil-section {
-  display: flex;
-  flex-direction: column; /* Organiza los elementos en una columna */
-  align-items: center;    /* Centra los elementos horizontalmente */
-  justify-content: center; /* Centra los elementos verticalmente */
-  height: calc(100vh - 56px); /* Resta la altura de la navbar (aprox. 56px) */
-  margin-top: 1.5rem;
-  background: linear-gradient(to bottom, rgba(197, 66, 99, 0.8) 0%, rgba(70, 31, 86, 0.8) 100%);
-  margin: 0 auto;
-  padding: 1rem;
-  max-width: 70%;
-  border-radius: 1.5rem;
-  box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.3);
-  color: white
+/*=== SECCION DE PERFIL ===*/
+.profile-container {
+  display: flex; /* Contenedor flex para secciones */
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan en la siguiente línea si es necesario */
+  justify-content: center; /* Centra las secciones horizontalmente */
+  align-items: flex-start; /* Alineación superior */
+  margin: 1.5rem auto; /* Margen automático en los lados */
+  width: 90%; /* Ancho responsivo, ocupando el 90% del contenedor padre */
+  max-width: 1200px; /* Ancho máximo para no expandirse demasiado */
+  background: linear-gradient(to bottom, rgba(197, 66, 99, 0.8) 0%, rgba(70, 31, 86, 0.8) 100%); /* Fondo degradado unificado */
+  border-radius: 1.5rem; /* Bordes redondeados */
+  box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.3); /* Sombra */
+  padding: 1rem; /* Espacio interno alrededor del contenido */
+  box-sizing: border-box; /* Incluye padding y border en el cálculo de ancho y alto */
 }
 
-.perfil-section h2 {
-  margin-bottom: 2em; /* Espaciado debajo del título */
-  color: #ffffff;
-  font-family: 'Rajdhani', sans-serif;
-  font-size: 2.5rem; /* Tamaño del título */
-  letter-spacing: 2px; /* Espaciado entre letras */
-  text-transform: uppercase; /* Todo en mayúsculas */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra de texto para contraste */
+.profile-section {
+  font-family: 'Raleway', sans-serif;
+  display: flex; /* Contenedor flex para la sección del perfil */
+  flex-direction: column; /* Organiza los elementos en una columna */
+  align-items: center; /* Centra los elementos horizontalmente */
+  justify-content: center; /* Centra los elementos verticalmente */
+  min-height: calc(100vh - 56px); /* Altura mínima ajustada para pantallas grandes */
+  margin: 1rem; /* Margen entre secciones */
+  padding: 1rem; /* Espacio interno */
+  color: white; /* Color del texto */
+  flex: 1; /* Ocupa igual espacio en el contenedor */
+  width: 100%; /* Ancho completo para la sección */
+  box-sizing: border-box; /* Incluye padding en el cálculo del ancho */
+}
+
+/* Estilos responsivos para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .profile-container {
+    margin: 1rem; /* Margen reducido en pantallas más pequeñas */
+  }
+
+  .profile-section {
+    min-height: auto; /* Altura automática para adaptarse mejor */
+  }
 }
 
 /* Estilos generales para la sección */
 input[type="number"] {
-  width: 20%; /* Ajuste responsivo basado en porcentaje */
+  width: 100%; /* Ajuste responsivo basado en porcentaje */
   max-width: 80px; /* Ancho máximo en pantallas grandes */
   padding: 0.5rem; /* Uso de rem para mantener consistencia */
-  margin: 0 1rem;
+  margin: 0.5rem 0; /* Margen vertical */
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 1rem; /* Tamaño de texto en rem para adaptarse a la raíz */
-  text-align: center;
+  text-align: center;/* Alineación del texto al centro */
 }
 
 /* Estilos para las etiquetas */
 label {
-  font-size: 1.1rem; /* Tamaño adaptable */
-  margin-right: 0.5rem;
-}
-
-/* Estilos para mejorar la alineación */
-input[type="number"],
-label {
-  display: inline-block;
-  vertical-align: middle;
+  font-family: 'Raleway', sans-serif; /* Fuente para las etiquetas */
+  font-size: 1.1rem; /* Tamaño del texto de las etiquetas */
+  margin-right: 0.5rem; /* Margen a la derecha */
 }
 
 /* Ajustes responsivos */
 @media (max-width: 768px) {
   input[type="number"] {
-    width: 30%; /* Ancho mayor para pantallas pequeñas */
+    width: 80%; /* Ancho mayor para pantallas pequeñas */
   }
 
   label {
     font-size: 0.9rem; /* Reducción de tamaño en pantallas más pequeñas */
   }
+
+  .profile-section h2 {
+    font-size: 1.8rem; /* Tamaño de texto ligeramente más pequeño para pantallas más pequeñas */
+    margin-top: 2rem; /* Ajustar el margen superior */
+    font-family: 'Raleway', sans-serif;
+  }
 }
 
 @media (max-width: 480px) {
   input[type="number"] {
-    width: 40%; /* Aumentar el ancho en pantallas muy pequeñas */
+    width: 100%; /* Aumentar el ancho en pantallas muy pequeñas */
   }
 
   label {
@@ -666,13 +684,13 @@ label {
   input[type="number"] {
     margin-bottom: 1rem; /* Separación entre campos */
   }
+
 }
 
-.perfil-section .btn {
-  margin-top: 5em; /* Espaciado encima del botón */
+.profile-section .btn {
+  margin-top: 2em; /* Espaciado encima del botón */
   border-radius: 2em;
   color: white;
-  
 }
 
 #profile-pic {
@@ -681,11 +699,12 @@ label {
   border-radius: 50%; /* Para hacerla redonda */
   object-fit: cover; /* Ajusta la imagen dentro del contenedor */
   background-color: #e0e0e0; /* Color de fondo por defecto */
-  margin-bottom: 3rem; /* Espacio inferior en rem */
+  margin-top: 3em;
+  margin: 1.5em 0; /* Espacio superior e inferior */
 }
 
 #profile-pic:hover {
-  transform: scale(1.5);
+  transform: scale(1.5); /* Efecto al pasar el mouse */
 }
 
 #navbar-profile-pic {
@@ -698,7 +717,7 @@ label {
 .btn-danger {
   background-color: #dc3545; /* Color de fondo del botón de eliminar */
   color: white; /* Color de texto del botón de eliminar */
-  padding: 8px 8px; /* Tamaño del botón */
+  padding: 8px; /* Tamaño del botón */
   border: 2px solid #dc3545; /* Línea del borde */
   border-radius: 5px; /* Borde redondeado */
   font-size: 1rem; /* Tamaño del texto */
@@ -711,7 +730,7 @@ label {
   border-color: #c82333; /* Cambia el color del borde en hover */
 }
 
-/* Botón de guardar */
+/* Botón de guardar foto */
 .btn-primary {
   background-color: #ee51dec2; /* Color de fondo del botón de guardar */
   color: white; /* Color de texto del botón de guardar */
@@ -725,15 +744,81 @@ label {
 
 .btn-primary:hover {
   background-color: #902380; /* Color de fondo en hover */
+  border-color: #d73fc1;
+}
+
+/* Botón de guardar cambios */
+#save-changes-btn {
+  background-color: #ee51dec2; /* Color de fondo del botón de guardar */
+  color: white; /* Color de texto del botón de guardar */
+  padding: 8px 8px; /* Tamaño del botón */
+  border: 2px solid #ee51dec2; /* Línea del borde */
+  border-radius: 20px; /* Borde redondeado */
+  font-size: 1rem; /* Tamaño del texto */
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
+  transition: background-color 0.3s ease, border-color 0.3s ease; /* Transiciones suaves */
+}
+
+#save-changes-btn:hover {
+  background-color: #902380; /* Color de fondo en hover */
   border-color: #d73fc1; /* Cambia el color del borde en hover */
 }
 
+/* Estilos para la sección de ajustes de perfil */
+.settings-section {
+  background: linear-gradient(to bottom, rgba(197, 66, 99, 0.8) 0%, rgba(70, 31, 86, 0.8) 100%); /* Fondo degradado desde un color a otro */
+  padding: 5%; /* Espacio interno alrededor de la sección para evitar que el contenido toque los bordes */
+  border-radius: 1.5rem; /* Bordes redondeados para un aspecto más suave */
+  box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.3); /* Sombra para dar profundidad */
+  color: white; /* Color del texto, en este caso blanco para resaltar sobre el fondo oscuro */
+  flex: 1; /* Permite que la sección ocupe el espacio disponible en un contenedor flexible */
+  max-width: 1200px; /* Limita el ancho máximo de la sección para que no se extienda demasiado en pantallas grandes */ 
+  margin: 4% auto; /* Centra la sección horizontalmente en su contenedor */
+  width: 90%; /* Establece el ancho de la sección al 90% del contenedor padre, adaptable a diferentes tamaños de pantalla */
+}
 
-#navbar-profile-pic {
-  width: 3rem; /* Tamaño de la imagen en la barra de navegación*/
-  height: 3rem; /* Tamaño de la imagen en la barra de navegación*/
-  border-radius: 50%; /* Para redondear la imagen */
-  margin-left: 0.625rem; /* Espaciado a la izquierda) */
+.settings-section h2 {
+  font-family: 'Raleway', sans-serif; /* Fuente específica para el encabezado */
+  font-size: 2rem; /* Tamaño del texto del encabezado */
+  margin: 1.5rem 0; /* Espacio alrededor del encabezado */
+  text-align: center; /* Centra el texto del encabezado */
+  text-transform: uppercase; /* Convierte el texto a mayúsculas */
+}
+
+.settings-section p {
+  font-family: 'Raleway', sans-serif; /* Fuente para el párrafo */
+  text-align: center; /* Centra el texto del párrafo */
+  margin-bottom: 2em; /* Espacio debajo del párrafo */
+  font-size: 1.2rem; /* Tamaño del texto del párrafo */
+}
+
+.settings-section .row {
+  font-family: 'Raleway', sans-serif;
+  display: flex; /* Utiliza flexbox para organizar los elementos */
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan en la siguiente línea si es necesario */
+  justify-content: space-between; /* Distribuye el espacio entre los elementos de forma equitativa */
+}
+.settings-section .row label{
+  color: #ffcc31;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.2em;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.row input[type="text"] {
+  background-color: #d08794;
+  width: 100%;
+  padding: 0.625rem;
+  border: 0.0625rem solid #693747;
+  border-radius: 0.625rem;
+  box-sizing: border-box;
+  font-weight: lighter;
+}
+
+.settings-section .col-md-6 {
+  font-family: 'Raleway', sans-serif;
+  flex: 0 0 48%; /* Establece el ancho de las columnas al 48% del contenedor */
 }
 
 /*===DARK_MODE===*/
@@ -741,8 +826,42 @@ label {
   background-color: #0e0614;
   color: #eff0f1;
 }
-.dark-mode main{
-  background-color: #100c1b; 
+/* Estilos generales para el modo claro (Día) */
+.dark-mode body {
+  background-color: white; /* Fondo claro */
+  color: black; /* Texto oscuro */
+}
+
+/* Estilos para el modo oscuro (Noche) */
+.dark-mode {
+  background-color: #0e0614; /* Fondo oscuro */
+  color: #eff0f1; /* Texto claro */
+}
+
+/* Ajustes para otros elementos */
+.dark-mode .site-header,
+.dark-mode footer {
+  background-color: #220344; /* Fondo oscuro para encabezados y pie de página */
+}
+
+.dark-mode #related-products-container {
+  background: linear-gradient(to bottom, rgba(224, 78, 114, 0.5), rgba(70, 31, 86, 0.8));
+}
+
+/* Asegúrate de que otros elementos también cambien adecuadamente */
+.dark-mode .btn {
+  background-color: #333; /* Fondo oscuro para botones */
+  color: white; /* Texto claro para botones */
+}
+
+.dark-mode .dropdown-menu {
+  background-color: #EDC235; /* Asegúrate de que el menú sea legible */
+}
+
+.dark-mode input[type="text"],
+.dark-mode input[type="number"] {
+  background-color: #444; /* Fondo oscuro para inputs */
+  color: white; /* Texto claro para inputs */
 }
 
 /* Alinear el menú desplegable a la derecha */
@@ -761,74 +880,3 @@ label {
 .dropdown-item {
   color:#f8f4f7
 }
-
-/*CSS para my-profile.html*/
-.row {
-  display: flex;
-  justify-content: space-between;
-}
-
-.container {
- padding-top: 2rem;
-}
-
-.container h2, h4 {
-color: white;
-}
-
-.container p {
-  color:gray;
-}
-.row label {
-  color: #ffcc31;
-  font-family: 'Rajdhani', sans-serif;
-  font-size: 1.2em;
-  display: block;
-  margin-bottom: 0.2rem;
-
-}
-.form-label {
-  color: #ffcc31;
-  font-family: 'Rajdhani', sans-serif;
-  font-size: 1.2em;
-  display: block;
-  margin-bottom: 0.2rem;
-}
-
-.row input[type="text"] {
-  background-color: #d08794;
-  width: 100%;
-  padding: 0.625rem;
-  border: 0.0625rem solid #693747;
-  border-radius: 0.625rem;
-  box-sizing: border-box;
-  font-weight: lighter;
-}
-
-.btn-primary {
-background-color: #ffcc31;
-  color: #e05165;
-  padding: 0.55rem 1.15rem;
-  border: none;
-  border-radius: 0.625rem;
-  cursor: pointer;
-  margin-top: 0.30rem;
-}
-
-.btn-primary:hover {
-  background-color: #e21934;
-}
-
-.form-control {
-  background-color: #d08794;
-}
-
-.btn-outline-success {
-  color: #e05165;
-  background-color: #d08794;
-}
-.btn-outline-success:hover {
-  color: #e05165;
-  background-color: #e21934;
-}
-
