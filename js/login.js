@@ -7,6 +7,40 @@ document.addEventListener('DOMContentLoaded', function() {
     if (isAuthenticated !== 'true' && currentPage !== 'login.html') {
         window.location.href = 'login.html';
     }
+    // Obtener el botón de login por su ID
+  const loginButton = document.getElementById('login-button');
+  
+  // Verificar si el botón de login existe
+  if (loginButton) {
+    // Si existe, agregar un event listener al botón para ejecutar la función handleLogin al hacer clic
+    loginButton.addEventListener('click', handleLogin);
+  }
+
+  // Obtener el botón de ingreso como invitado por su ID
+  const guestButton = document.getElementById('guest-button');
+  
+  // Verificar si el botón de invitado existe
+  if (guestButton) {
+    // Si existe, agregar un event listener al botón para ejecutar el siguiente código al hacer clic
+    guestButton.addEventListener('click', function() {
+      
+      // Simular un inicio de sesión como invitado
+      const guestUsername = "invitado"; 
+      const guestPassword = ""; 
+
+      // Guardar la sesión como invitado en localStorage
+      localStorage.setItem('isAuthenticated', 'true');
+      localStorage.setItem('username', guestUsername);
+
+      // Mostrar un mensaje de "Ingreso como invitado exitoso"
+      showAlertSuccess('¡Ingreso como invitado exitoso! Redirigiendo a la página de portada...');
+      
+      // Redirigir a la página de portada después de 2 segundos
+      setTimeout(function() {
+        window.location.href = 'index.html';
+      }, 2000);
+    });
+  }
 });
 
 // Función que se ejecuta al hacer clic en el botón "Ingresar"
@@ -60,27 +94,4 @@ function handleLogin() {
     const alertContainer = document.getElementById('alert-container');
     alertContainer.innerHTML = `<div class="alert alert-danger">${message}</div>`;
   }
-  
-  // Event listener para el botón "Ingresar"
-  document.getElementById('login-button').addEventListener('click', handleLogin);
-
-  
-  // Función para ingresar como invitado
-  document.getElementById('guest-button').addEventListener('click', function() {
-  // Simular inicio de sesión como invitado
-  const guestUsername = "invitado"; 
-  const guestPassword = ""; 
-
-  // Guardar la sesión como invitado
-  localStorage.setItem('isAuthenticated', 'true');
-  localStorage.setItem('username', guestUsername);
-
-  // Mostrar mensaje de "Ingreso exitoso"
-  showAlertSuccess('¡Ingreso como invitado exitoso! Redirigiendo a la página de portada...');
-
-  // Redirigir a la página de portada después de 2 segundos
-  setTimeout(function() {
-      window.location.href = 'index.html'; 
-  }, 2000);
-});
 

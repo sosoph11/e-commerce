@@ -330,6 +330,7 @@ input[type="password"]::placeholder {
 
 .star-rating {
   display: flex;
+  flex-direction: row-reverse; /* Cambia el orden de visualización de los labels */
   justify-content: center;
   margin-bottom: 2rem; /* 20px en rem */
 }
