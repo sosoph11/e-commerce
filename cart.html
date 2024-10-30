@@ -46,8 +46,37 @@
   </nav>
   <main>
     <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+      <div id="empty-cart-message" class="alert alert-warning text-center" role="alert" style="display: none;">
+        No hay productos en el carrito.
+      </div>
+    </div>
+    <div class="cart-container">
+      <div class="cart-items">
+        <!-- Producto individual en el carrito -->
+        <div class="cart-item">
+          <img src="img/lienzo.jpg" alt="Lienzo de 40 x 60 cm" class="item-image">
+          <div class="item-details">
+            <h5 class="item-name">Lienzo de 40 x 60 cm</h5>
+            <p class="item-description">¿Estás con estrés? Esto es idóneo para calmar tu crisis…</p>
+            <p class="item-price">Precio $250</p>
+          </div>
+          <div class="item-controls">
+            <button class="btn-remove">🗑️</button>
+            <div class="quantity-controls">
+              <button class="btn-decrease">-</button>
+              <span class="quantity">1</span>
+              <button class="btn-increase">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="cart-summary">
+        <h5>Resumen de la compra</h5>
+        <p class="total-quantity">Productos (0)</p> <!-- Este se actualiza automáticamente -->
+        <p>Total: <span class="total-price">$0</span></p> <!-- Este también se actualizará -->
+        <button class="btn-checkout">CONTINUAR CON LA COMPRA</button>
+        <button class="btn-continue-shopping">SEGUIR COMPRANDO</button>
       </div>
     </div>
   </main>
