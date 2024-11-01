@@ -77,3 +77,4 @@ document.addEventListener("DOMContentLoaded", () => {
     // Inicializa el carrito en el DOM
     renderCart();
 });
+

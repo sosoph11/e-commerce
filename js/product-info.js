@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         // Mostrar la información del producto
         let productInfoContainer = document.getElementById("product-info-container");
         
-        productInfoContainer.innerHTML = `
+     productInfoContainer.innerHTML = `
             <p><strong>Categoria:</strong> ${product.category}</p> 
             <div class="col-md-6">
                 <div id="product-images" class="carousel slide" data-bs-ride="carousel">
@@ -41,8 +41,40 @@ document.addEventListener('DOMContentLoaded', async function () {
                 <p><strong id="sold-count">${product.soldCount} Vendidos</strong></p>
                 <p><strong id="product-price">${product.currency} ${product.cost}</strong></p>
                 <p>${product.description}</p>
+                <button id="buy-button" class="btn btn-primary">Comprar</button>
             </div>
         `;
+
+           // Funcionalidad del botón "Comprar"
+           document.getElementById('buy-button').addEventListener('click', function () {
+            // Obtener el carrito existente o inicializar uno vacío
+            let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+        
+            // Comprobar si el producto ya está en el carrito
+            const existingProduct = cartItems.find(item => item.id === product.id);
+            
+            if (existingProduct) {
+                // Si el producto ya está en el carrito, aumentar la cantidad
+                existingProduct.quantity += 1;
+            } else {
+                // Si no está, añadir el producto al carrito
+                cartItems.push({
+                    id: product.id,
+                    name: product.name,
+                    price: product.cost,
+                    currency: product.currency,
+                    image: product.images[0], // Imagen principal del producto
+                    quantity: 1 // Inicializar cantidad en 1
+                });
+            }
+        
+            // Guardar el carrito actualizado en localStorage
+            localStorage.setItem("cartItems", JSON.stringify(cartItems));
+        
+            // Redirigir a cart.html
+            window.location.href = "cart.html";
+        });
+        
         // Mostrar productos relacionados
         let relatedProductsContainer = document.getElementById("related-products");
 
