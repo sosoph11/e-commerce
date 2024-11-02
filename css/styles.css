@@ -920,12 +920,19 @@ body {
 
 .item-details {
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .item-name {
   color: #f9d342;
   font-weight: bold;
   margin: 0;
+}
+
+.item-subtotal {
+  color: #f9d342;
+  font-weight: bold;
 }
 
 .item-description {
@@ -1048,6 +1055,10 @@ body {
 
   .item-price {
     font-size: 1.1em; 
+  }
+
+  .item-subtotal{
+    font-size: 1.1em;
   }
 
   .btn-remove {

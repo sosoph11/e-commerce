@@ -6,6 +6,15 @@ document.addEventListener("DOMContentLoaded", () => {
     let continueShoppingButton = document.querySelector(".btn-continue-shopping");
     let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 
+    // Asegurarse de que cada producto en cartItems tenga una descripción
+    cartItems = cartItems.map(item => ({
+        ...item,
+        description: item.description || "Descripción predeterminada"
+    }));
+
+    // Guardar el carrito actualizado en `localStorage`
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+
     // Función para renderizar el carrito de productos
     function renderCart() {
         cartItemsContainer.innerHTML = ""; // Limpia los items previos
@@ -19,14 +28,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // Renderiza cada item en el carrito
             cartItems.forEach((item, index) => {
+                let subtotal = item.price * item.quantity; // Calcula el subtotal
                 let cartItemHTML = `
                     <div class="cart-item">
                         <img src="${item.image}" alt="${item.name}" class="item-image">
                         <div class="item-details">
                             <h5 class="item-name">${item.name}</h5>
                             <p class="item-description">${item.description}</p>
-                            <p class="item-price">Precio ${item.currency} ${item.cost}</p>
-                        </div>
+                            <p class="item-price">Precio ${item.currency} ${item.price}</p>
+                            <span class="item-subtotal">Sub-Total: US$${subtotal}</span> <!-- Muestra el subtotal aquí -->
                         <div class="item-controls">
                             <button class="btn-remove" data-index="${index}">🗑️</button>
                             <div class="quantity-controls">
@@ -46,11 +56,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Función para actualizar el resumen del carrito
     function updateCartSummary() {
-        let totalPrice = cartItems.reduce((total, item) => total + item.cost * item.quantity, 0);
-        cartSummary.querySelector(".total-price").textContent = `$${totalPrice}`;
+        let totalPrice = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+        cartSummary.querySelector(".total-price").textContent = `US$${totalPrice}`;
         let totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
         cartSummary.querySelector(".total-quantity").textContent = `Productos (${totalQuantity})`;
-        document.querySelector(".cart-count").textContent = totalQuantity; // Actualiza el contador en la interfaz
     }
 
     // Event Listeners para incrementar, decrementar y eliminar productos
