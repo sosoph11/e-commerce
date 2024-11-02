@@ -6,12 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
     let continueShoppingButton = document.querySelector(".btn-continue-shopping");
     let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 
-    // Asegurarse de que cada producto en cartItems tenga una descripción
-    cartItems = cartItems.map(item => ({
-        ...item,
-        description: item.description || "Descripción predeterminada"
-    }));
-
     // Guardar el carrito actualizado en `localStorage`
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
 
