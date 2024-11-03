@@ -1014,6 +1014,17 @@ body {
   text-align: center;
 }
 
+#empty-cart-message {
+  padding: 20px; /* Espacio interno */
+  border-radius: 5px; /* Bordes redondeados */
+  background-color: #fff3cd; /* Color de fondo */
+  color: #856404; /* Color del texto */
+  font-size: 1.2em; /* Tamaño de fuente */
+  border: 1px solid #ffeeba; /* Borde */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+  display: none; /* Inicialmente oculto */
+}
+
 /* Estilos Responsivos */
 @media (max-width: 768px) {
   .cart-container {
