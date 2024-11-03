@@ -5,6 +5,10 @@ document.addEventListener("DOMContentLoaded", () => {
     let cartSummary = document.querySelector(".cart-summary");
     let continueShoppingButton = document.querySelector(".btn-continue-shopping");
     let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+    updateCartBadge();
+
+    // Guardar el carrito actualizado en `localStorage`
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
 
     // Guardar el carrito actualizado en `localStorage`
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
@@ -56,6 +60,10 @@ document.addEventListener("DOMContentLoaded", () => {
         cartSummary.querySelector(".total-quantity").textContent = `Productos (${totalQuantity})`;
     }
 
+    function updateCartBadge(){
+        let totalQuantity = cartItems.reduce((total,item) => total + item.quantity, 0);
+        document.getElementById("cart-badge").textContent = totalQuantity;
+    }
     // Event Listeners para incrementar, decrementar y eliminar productos
     cartItemsContainer.addEventListener("click", (e) => {
         let index = e.target.dataset.index;
@@ -70,6 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         localStorage.setItem("cartItems", JSON.stringify(cartItems)); // Actualizar `localStorage`
         renderCart();
+        updateCartBadge();
     });
 
     // Botón de "Seguir Comprando"
@@ -80,4 +89,5 @@ document.addEventListener("DOMContentLoaded", () => {
     // Inicializa el carrito en el DOM
     renderCart();
 });
+
 
