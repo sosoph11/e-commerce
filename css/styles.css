@@ -879,7 +879,8 @@ label {
 }
 
 .dropdown-item {
-  color:#f8f4f7
+  color:#f8f4f7;
+  align-items: flex-start;
 }
 
 
@@ -1061,4 +1062,23 @@ body {
   .quantity {
     font-size: 1em; 
   }
+}
+
+.dropdown-item {
+  display: inline;
+}
+
+
+
+#cart-badge {
+  background: #ff2e63;
+  border: none;
+  margin-left: 10px;
+  color: #fff;
+  border-radius: 12px;
+  height: 1.7rem;
+  width: 1.7rem;
+  position:relative;
+  padding: 0.20rem;
+   font-size: 14px;
 }
