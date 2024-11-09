@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let continueShoppingButton = document.querySelector(".btn-continue-shopping");
     let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
     updateCartBadge();
+    let shippingOptions = document.querySelectorAll("input[name='shipping']");
 
     // Guardar el carrito actualizado en `localStorage`
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
@@ -58,7 +59,19 @@ document.addEventListener("DOMContentLoaded", () => {
         cartSummary.querySelector(".total-price").textContent = `US$${totalPrice}`;
         let totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
         cartSummary.querySelector(".total-quantity").textContent = `Productos (${totalQuantity})`;
+
+        cartSummary.querySelector(".total-price").textContent = `US$${totalPrice}`;
+        cartSummary.querySelector(".total-quantity").textContent = `Productos (${totalQuantity})`;
+        
+        // Obtiene el porcentaje del tipo de envío seleccionado
+        let shippingRate = parseFloat(document.querySelector("input[name='shipping']:checked").value);
+        
+        // Calcula el total con el porcentaje de envío
+        let totalWithShipping = totalPrice + (totalPrice * shippingRate);
+        cartSummary.querySelector(".total-with-shipping").textContent = `US$${totalWithShipping.toFixed(2)}`;
     }
+        // Actualiza el resumen al seleccionar un tipo de envío
+    shippingOptions.forEach(option => option.addEventListener("change", updateCartSummary));
 
     function updateCartBadge(){
         let totalQuantity = cartItems.reduce((total,item) => total + item.quantity, 0);
@@ -79,6 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem("cartItems", JSON.stringify(cartItems)); // Actualizar `localStorage`
         renderCart();
         updateCartBadge();
+        updateCartSummary();
     });
 
     // Botón de "Seguir Comprando"
@@ -89,5 +103,3 @@ document.addEventListener("DOMContentLoaded", () => {
     // Inicializa el carrito en el DOM
     renderCart();
 });
-
-
