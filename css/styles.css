@@ -883,224 +883,292 @@ label {
   align-items: flex-start;
 }
 
-
 /*===CART====*/
-
-body {
-  color: #fff;
-  font-family: 'Raleway', sans-serif;
-}
-
+/* Contenedor principal del carrito */
 .cart-container {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-  flex-wrap: wrap; 
+  display: flex; /* Flexbox para distribuir elementos en línea */
+  justify-content: space-between; /* Espacio entre elementos */
+  padding: 20px; /* Espaciado interno */
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+  position: relative;
 }
 
+/* Sección de los artículos del carrito */
 .cart-items {
-  width: 60%;
+  width: 50%; /* Ocupa el 60% del ancho total */
 }
 
+/* Cada artículo individual en el carrito */
 .cart-item {
-  display: flex;
-  align-items: center;
-  background-color: #222;
-  padding: 15px;
-  margin-bottom: 10px;
-  border-radius: 8px;
-  border: 1px solid #ff2e63;
+  display: flex; /* Flexbox para alinear elementos en línea */
+  align-items: stretch; /* Alineación vertical */
+  background-color: #1E182F; /* Color de fondo oscuro */
+  padding: 2em; /* Espaciado interno */
+  margin-bottom: 1em; /* Espacio debajo de cada artículo */
+  border-radius: 15px; /* Bordes redondeados */
+
+  /* Bordes personalizados */
+  border-top: none; /* Sin borde superior */
+  border-right: none; /* Sin borde derecho */
+  border-bottom: 5px solid #E05165; /* Borde inferior grueso */
+  border-left: 2px solid #E05165; /* Borde izquierdo fino */
 }
 
+
+/* Imagen del artículo */
 .item-image {
-  width: 80px;
-  height: 80px;
-  margin-right: 15px;
-  border-radius: 5px;
+  width: 11em; /* Ancho de la imagen */
+  height: 9em; /* Altura de la imagen */
+  margin-right: 15px; /* Espacio a la derecha */
+  border-radius: 5px; /* Bordes ligeramente redondeados */
 }
 
+/* Contenedor de detalles del artículo */
 .item-details {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
+  flex-grow: 1; /* Ocupa el espacio restante */
+  display: flex; /* Flexbox */
+  flex-direction: column; /* Apila elementos verticalmente */
 }
 
+/* Nombre del artículo */
 .item-name {
-  color: #f9d342;
-  font-weight: bold;
-  margin: 0;
+  color: white; /* Color amarillo */
+  font-weight: bold; /* Negrita */
+  margin: 0; /* Sin margen */
 }
 
+/* Subtotal del artículo */
 .item-subtotal {
-  color: #f9d342;
-  font-weight: bold;
+  color: #f9d342; /* Color amarillo */
+  font-weight: bold; /* Negrita */
 }
 
+/* Descripción del artículo */
 .item-description {
-  font-size: 0.9em;
-  color: #ccc;
+  font-size: 0.9em; /* Tamaño de fuente reducido */
+  color: #ccc; /* Color gris claro */
+  padding: 2px;
 }
 
+/* Precio del artículo */
 .item-price {
-  color: #f9d342;
-  font-weight: bold;
+  color: #f9d342; /* Color amarillo */
+  font-weight: bold; /* Negrita */
 }
 
+/* Controles de cantidad y eliminación del artículo */
 .item-controls {
-  display: flex;
-  align-items: center;
+  display: flex; /* Flexbox para alineación en línea */
+  align-items: center; /* Alineación vertical */
+  justify-content: flex-end; /* Alineación horizontal a la derecha */
 }
 
+/* Botón para eliminar el artículo */
 .btn-remove {
-  background: none;
-  border: none;
-  color: #ff2e63;
-  font-size: 1.2em;
-  cursor: pointer;
-  margin-right: 15px;
+  background: none; /* Sin fondo */
+  border: none; /* Sin borde */
+  color: #E05165; /* Color rosado */
+  font-size: 1.2em; /* Tamaño de fuente aumentado */
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
+  margin-right: 15px; /* Espacio a la derecha */
 }
 
+/* Contenedor de los controles de cantidad */
 .quantity-controls {
+  display: flex; /* Flexbox */
+  align-items: center; /* Alineación vertical */
+  background-color: #eccb83; /* Fondo gris oscuro */
+  padding: 5px 10px; /* Espaciado interno */
+  border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Botones para aumentar o disminuir la cantidad */
+.btn-decrease, .btn-increase {
+  background: none; /* Sin fondo */
+  border: none; /* Sin borde */
+  color: #E05165; /* Color rosado */
+  font-size: 1.2em; /* Tamaño de fuente aumentado */
+  cursor: pointer; /* Cambia el cursor */
+  padding: 5px 10px; /* Espaciado interno dentro del botón */
+  border-radius: 3px; /* Bordes redondeados para los botones */
+}
+
+.btn-decrease {
+  border-right: 2px solid #E05165;
+}
+.btn-increase {
+  border-left: 2px solid #E05165;
+}
+
+.btn-decrease:hover, .btn-increase:hover {
+  background-color: #E05165; /* Fondo rosado al pasar el cursor */
+  color: white; /* Texto blanco al pasar el cursor */
+}
+
+/* Cantidad del artículo */
+.quantity {
+  margin: 0 10px; /* Espacio a los lados */
+  color: #E05165; /* Color blanco */
+}
+
+/* Resumen del carrito */
+.cart-summary {
+  width: 35%; /* Ocupa el 30% del ancho total */
+  height:35%;
+  background-color: #1E182F; /* Fondo oscuro */
+  padding: 20px; /* Espaciado interno */
+  border-radius: 8px; /* Bordes redondeados */
+  border: 1px solid #E05165; /* Borde rosado */
+  color: #f7f6f4; /* Texto amarillo */
+  border-top: none; /* Sin borde superior */
+  border-right: none; /* Sin borde derecho */
+  border-bottom: 5px solid #E05165; /* Borde inferior grueso */
+  border-left: 2px solid #E05165; /* Borde izquierdo fino */
+}
+
+.total-quantity{
+  font-size: 1.2em; /* Tamaño de fuente del título */
+  color: #eccb83; /* Color rosado */
+  margin-bottom: 10px; /* Espacio debajo del título */
+}
+
+.total-price {
+  font-size: 1.2em; /* Tamaño de la fuente */
+  color: #eccb83; /* Color rosado */
+}
+
+.cart-summary p {
+  font-size: 1.2em; /* Tamaño de la fuente */
+  color: #eccb83; /* Color rosado */
+}
+/* Botón de checkout */
+.btn-checkout {
+  width: 100%; /* Ocupa todo el ancho */
+  padding: 10px; /* Espaciado interno */
+  background-color: #f9d342; /* Fondo amarillo */
+  color: #E05165; /* Texto oscuro */
+  font-weight: bold; /* Negrita */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor */
+  margin-top: 15px; /* Espacio superior */
+  border-bottom: 5px solid #E05165; /* Borde inferior grueso */
+  border-left: 2px solid #E05165; /* Borde izquierdo fino */
+}
+
+/* Botón de continuar comprando */
+.btn-continue-shopping {
+  width: 100%; /* Ocupa todo el ancho */
+  padding: 10px; /* Espaciado interno */
+  margin-top: 10px; /* Espacio superior */
+  background-color: #f9d342; /* Fondo rosado */
+  color: #E05165; /* Texto oscuro */
+  font-weight: bold; /* Negrita */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor */
+  text-align: center; /* Alineación centrada */
+  border-bottom: 5px solid #E05165; /* Borde inferior grueso */
+  border-left: 2px solid #E05165; /* Borde izquierdo fino */
+}
+.shipping-options {
+  padding: 10px;
+  border: 1px solid #E05165;
+  border-radius: 5px;
+  background-color: #2b2147;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.shipping-options h5 {
+  color: white;
+}
+
+.shipping-options div {
   display: flex;
   align-items: center;
-  background-color: #333;
-  padding: 5px 10px;
-  border-radius: 5px;
+  margin-bottom: 8px;
 }
 
-.btn-decrease, .btn-increase {
-  background: none;
-  border: none;
-  color: #f9d342;
-  font-size: 1.2em;
-  cursor: pointer;
+.shipping-options input[type="radio"] {
+  accent-color: #e91e63; /* Color para el radio button */
+  margin-right: 8px;
 }
 
-.quantity {
-  margin: 0 10px;
-  color: #fff;
-}
-
-.cart-summary {
-  width: 30%;
-  background-color: #222;
-  padding: 20px;
-  border-radius: 8px;
-  border: 1px solid #ff2e63;
-  color: #f9d342;
-}
-
-.btn-checkout {
-  width: 100%;
-  padding: 10px;
-  background-color: #f9d342;
-  color: #1a1a2e;
+.shipping-options label {
   font-weight: bold;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 15px;
 }
-
-.btn-continue-shopping {
-  width: 100%;
-  padding: 10px;
-  margin-top: 10px;
-  background-color: #ff2e63; 
-  color: #1a1a2e;
-  font-weight: bold;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  text-align: center;
-}
-
+/* Mensaje de carrito vacío */
 #empty-cart-message {
   padding: 20px; /* Espacio interno */
   border-radius: 5px; /* Bordes redondeados */
-  background-color: #fff3cd; /* Color de fondo */
-  color: #856404; /* Color del texto */
+  background-color: #fff3cd; /* Fondo amarillo claro */
+  color: #856404; /* Texto marrón oscuro */
   font-size: 1.2em; /* Tamaño de fuente */
-  border: 1px solid #ffeeba; /* Borde */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra */
-  display: none; /* Inicialmente oculto */
+  border: 1px solid #ffeeba; /* Borde amarillo */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  display: none; /* Oculto inicialmente */
 }
 
-/* Estilos Responsivos */
+/*=== ESTILOS RESPONSIVOS ===*/
+
+/* Pantallas pequeñas (hasta 768px de ancho) */
 @media (max-width: 768px) {
   .cart-container {
-    flex-direction: column; 
+    flex-direction: column; /* Apila elementos verticalmente */
   }
 
   .cart-items {
-    width: 100%; 
+    width: 100%; /* Ocupa todo el ancho */
   }
 
   .cart-summary {
-    width: 100%; 
-    margin-top: 20px; 
+    width: 100%; /* Ocupa todo el ancho */
+    margin-top: 20px; /* Espacio superior */
   }
 
   .cart-item {
-    flex-direction: column; 
-    align-items: flex-start; 
+    flex-direction: column; /* Apila elementos verticalmente */
+    align-items: flex-start; /* Alinea elementos a la izquierda */
   }
 
   .item-controls {
-    justify-content: space-between; 
-    width: 100%; 
+    justify-content: space-between; /* Espacio entre elementos */
+    width: 100%; /* Ocupa todo el ancho */
   }
 
   .item-image {
-    margin-bottom: 10px; 
+    margin-bottom: 10px; /* Espacio debajo de la imagen */
   }
 
   .btn-checkout, .btn-continue-shopping {
-    width: 100%; 
+    width: 100%; /* Ocupa todo el ancho */
   }
 }
-
+/* Pantallas muy pequeñas (hasta 480px de ancho) */
 @media (max-width: 480px) {
   .item-name {
-    font-size: 1.2em; 
+    font-size: 1.2em; /* Tamaño de fuente más grande */
   }
 
-  .item-price {
-    font-size: 1.1em; 
+  .item-price, .item-subtotal {
+    font-size: 1.1em; /* Tamaño de fuente más grande */
   }
 
-  .item-subtotal{
-    font-size: 1.1em;
-  }
-
-  .btn-remove {
-    font-size: 1em; 
-  }
-
-  .btn-decrease, .btn-increase {
-    font-size: 1em; 
-  }
-
-  .quantity {
-    font-size: 1em; 
+  .btn-remove, .btn-decrease, .btn-increase, .quantity {
+    font-size: 1em; /* Ajusta el tamaño de fuente */
   }
 }
-
-.dropdown-item {
-  display: inline;
-}
-
-
-
+/* Estilo para el badge del carrito */
 #cart-badge {
-  background: #ff2e63;
-  border: none;
-  margin-left: 10px;
-  color: #fff;
-  border-radius: 12px;
-  height: 1.7rem;
-  width: 1.7rem;
-  position:relative;
-  padding: 0.20rem;
-   font-size: 14px;
+  background: #E05165; /* Fondo rosado */
+  border: none; /* Sin borde */
+  margin-left: 10px; /* Espacio a la izquierda */
+  color: #fff; /* Texto blanco */
+  border-radius: 12px; /* Bordes redondeados */
+  height: 1.7rem; /* Altura */
+  width: 1.7rem; /* Ancho */
+  position:relative; /* Posición relativa */
+  padding: 0.20rem; /* Espacio interno */
+  font-size: 14px; /* Tamaño de fuente */
 }
