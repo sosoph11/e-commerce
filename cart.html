@@ -4,14 +4,16 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>eMercado - Todo lo que busques está aquí</title>
+  <title> eMercado - Todo lo que busques está aquí </title>
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
 </head>
 
+
 <body>
+  <!-- LA NARBAR -->
   <nav class="navbar navbar-expand-lg navbar-dark p-1">
     <div class="container">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -21,73 +23,106 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav w-100 justify-content-between">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">Inicio</a>
+            <a class="nav-link" href="index.html"> Inicio </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="categories.html">Categorías</a>
+            <a class="nav-link" href="categories.html"> Categorías </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="sell.html">Vender</a>
+            <a class="nav-link" href="sell.html"> Vender </a>
           </li>
           <li class="nav-item dropdown">
             <a id="user-name" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"></a>
             <ul class="dropdown-menu dropdown-menu-right">
-              <li><a class="dropdown-item" href="cart.html">Mi carrito</a><span id="cart-badge">0</span></li>
-              <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
-              <li><a id="logout" class="dropdown-item" href="login.html">Cerrar sesión</a></li>
+              <li><a class="dropdown-item" href="cart.html"> Mi carrito </a><span id="cart-badge">0</span></li>
+              <li><a class="dropdown-item" href="my-profile.html"> Mi perfil </a></li>
+              <li><a id="logout" class="dropdown-item" href="login.html"> Cerrar sesión </a></li>
             </ul>
           <li class="form-check form-switch mb-3" class="nav-item">
             <input class="form-check-input" type="checkbox" id="darkModeSwitch">
-            <label class="form-check-label" for="darkModeSwitch">◑</label>
+            <label class="form-check-label" for="darkModeSwitch"> ◑ </label>
           </li>
         </ul>
       </div>
     </div>
   </nav>
-  <main>
-    <div class="container">
-      <div id="empty-cart-message" class="alert alert-warning text-center" role="alert" style="display: none;">
+
+
+  <!-- MIREN QUE HERMOSO ES EL MAIN -->
+    <main>
+      <div class="container">
+        <div id="empty-cart-message" class="alert alert-warning text-center" role="alert" style="display: none;">
         No hay productos en el carrito.
+        </div>
       </div>
-    </div>
     <div class="cart-container">
       <div class="cart-items">
-        <!-- Producto individual en el carrito -->
+
+
+        <!-- PRODUCTO INDIVIDUAL USADO DE EJEMPLO -->
         <div class="cart-item">
           <img src="img/lienzo.jpg" alt="Lienzo de 40 x 60 cm" class="item-image">
-          <div class="item-details">
-            <h5 class="item-name">Lienzo de 40 x 60 cm</h5>
-            <p class="item-description">¿Estás con estrés? Esto es idóneo para calmar tu crisis…</p>
-            <p class="item-price">Precio $250</p>
+            <div class="item-details">
+             <h5 class="item-name">Lienzo de 40 x 60 cm</h5>
+              <p class="item-description"> ¿Estás con estrés? Esto es idóneo para calmar tu crisis… </p>
+                <p class="item-price"> Precio $250 </p>
           </div>
           <div class="item-controls">
             <button class="btn-remove">🗑️</button>
             <div class="quantity-controls">
-              <button class="btn-decrease">-</button>
-              <span class="quantity">1</span>
-              <button class="btn-increase">+</button>
+              <button class="btn-decrease"> - </button>
+                <span class="quantity"> 1 </span>
+                  <button class="btn-increase"> + </button>
             </div>
           </div>
         </div>
       </div>
-    
+      
+
+      <!-- TIPOS DE ENVIOS -->
+      <div class="shipping-options">
+        <h5> Tipo de Envío </h5>
+        <div>
+          <input type="radio" id="premium" name="shipping" value="0.15">
+            <label for="premium"> Premium - 2 a 5 Días (15%) </label>
+        </div>
+        <div>
+          <input type="radio" id="express" name="shipping" value="0.07">
+            <label for="express"> Express - 5 a 8 Días (7%) </label>
+        </div>
+        <div>
+          <input type="radio" id="standard" name="shipping" value="0.05" checked>
+            <label for="standard"> Standard - 12 a 15 Días (5%) </label>
+        </div>
+      </div>
+        <p> Total con Envío: <span class="total-with-shipping"> 0 </span></p>
+
+
+<!-- EL RESUMEN DE COMPRA BRRRR -->
       <div class="cart-summary">
-        <h5>Resumen de la compra</h5>
-        <p class="total-quantity">Productos (0)</p> <!-- Este se actualiza automáticamente -->
-        <p>Total: <span class="total-price">0</span></p> <!-- Este también se actualizará -->
-        <button class="btn-checkout">FINALIZAR COMPRA</button>
-        <button class="btn-continue-shopping">SEGUIR COMPRANDO</button>
+        <h5> Resumen de la compra </h5>
+          <p class="total-quantity"> Productos (0) </p> <!-- Este se actualiza automáticamente -->
+          <p> Total: <span class="total-price"> 0 </span></p> <!-- Este también se actualizará, esperemos -->
+            <button class="btn-checkout"> FINALIZAR COMPRA </button>
+            <button class="btn-continue-shopping"> SEGUIR COMPRANDO </button>
       </div>
     </div>
   </main>
+
+
+  <!-- FOOTER O LA PARTE QUE NADIE LEE -->
   <footer class="text-muted">
     <div class="container">
       <p class="float-end">
-        <a href="#">Volver arriba</a>
+        <a href="#"> Volver arriba </a>
       </p>
-      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
+
+      <p> Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank"> Jovenes a Programar </a></p>
     </div>
   </footer>
+
+
+<!-- CARGANDO EL SPINNER -->
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
@@ -96,10 +131,12 @@
       <div></div>
     </div>
   </div>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/login.js"></script>
-  <script src="js/init.js"></script>
-  <script src="js/cart.js"></script>
-</body>
 
+
+  <!-- SCRIPTSSSS -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/cart.js"></script>
+  </body>
 </html>
