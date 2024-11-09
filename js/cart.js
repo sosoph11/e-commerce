@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
     let continueShoppingButton = document.querySelector(".btn-continue-shopping");
     let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
     updateCartBadge();
+    let shippingOptions = document.querySelectorAll("input[name='shipping']");
+
 
     // Guardar el carrito actualizado en `localStorage`
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
@@ -52,18 +54,32 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Función para actualizar el resumen del carrito
-    function updateCartSummary() {
-        let totalPrice = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
-        cartSummary.querySelector(".total-price").textContent = `US$${totalPrice}`;
-        let totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
-        cartSummary.querySelector(".total-quantity").textContent = `Productos (${totalQuantity})`;
-    }
+// Función para actualizar el resumen del carrito
+function updateCartSummary() {
+    // Cálculo del total sin envío
+    let totalPrice = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+    cartSummary.querySelector(".total-price").textContent = `US$${totalPrice.toFixed(2)}`;
+    
+    // Cálculo de la cantidad total de productos
+    let totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
+    cartSummary.querySelector(".total-quantity").textContent = `Productos (${totalQuantity})`;
 
-    function updateCartBadge(){
-        let totalQuantity = cartItems.reduce((total,item) => total + item.quantity, 0);
-        document.getElementById("cart-badge").textContent = totalQuantity;
-    }
+    // Obtiene el porcentaje del tipo de envío seleccionado
+    let shippingRate = parseFloat(document.querySelector("input[name='shipping']:checked").value);
+
+    // Calcula el total con el porcentaje de envío
+    let totalWithShipping = totalPrice + (totalPrice * shippingRate);
+    cartSummary.querySelector(".total-with-shipping").textContent = `US$${totalWithShipping.toFixed(2)}`;
+}
+
+// Actualiza el resumen al seleccionar un tipo de envío
+shippingOptions.forEach(option => option.addEventListener("change", updateCartSummary));
+
+function updateCartBadge() {
+    let totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
+    document.getElementById("cart-badge").textContent = totalQuantity;
+}
+
     // Event Listeners para incrementar, decrementar y eliminar productos
     cartItemsContainer.addEventListener("click", (e) => {
         let index = e.target.dataset.index;
@@ -79,8 +95,11 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem("cartItems", JSON.stringify(cartItems)); // Actualizar `localStorage`
         renderCart();
         updateCartBadge();
+        updateCartSummary();
     });
 
+
+    
     // Botón de "Seguir Comprando"
     continueShoppingButton.addEventListener("click", () => {
         window.location.href = "categories.html"; // Cambia esto a la URL de la página de categorías o productos
