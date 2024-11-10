@@ -147,8 +147,7 @@ input[type="password"]::placeholder {
 
 /*===PRODUCT-INFO===*/
 .product-info main {
-  background-color: #724e91;
-  width: 80%;
+  width: 100%;
   margin: auto;
   border-radius: 20px;
 }
@@ -164,7 +163,7 @@ input[type="password"]::placeholder {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  background: linear-gradient(to bottom, rgba(197, 66, 99, 0.8), rgba(70, 31, 86, 0.8));
+  background: linear-gradient(to bottom,rgba(55, 15, 71, 0.8), rgba(175, 33, 69, 0.8));
   padding: 20px;
   border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -201,14 +200,14 @@ input[type="password"]::placeholder {
 }
 
 #product-info-container h1 {
-  font-size: 3em;
+  font-size: 2em;
   font-weight: bold;
   margin-bottom: 20px;
   color: white;
 }
 
 #product-info-container p {
-  font-size: 1.1em;
+  font-size: 1em;
   color: #f4d7e3;
   margin-bottom: 10px;
 }
@@ -216,18 +215,18 @@ input[type="password"]::placeholder {
 /* Precio*/
 #product-price {
   font-size: 2em; 
-  color: #efe8ec; 
+  color: #EDC235; 
 }
 
 /* Vendidos*/
 #sold-count {
-  color: yellow;
+  color: white;
   font-size: 1em; 
 }
 
 /*info de productos*/
 .text-center.my-4 {
-  background: linear-gradient(to bottom, rgba(62, 1, 63, 0.936), rgba(114, 6, 105, 0.8));
+  background: linear-gradient(to bottom,rgba(55, 15, 71, 0.8), rgba(175, 33, 69, 0.8));
   color: #d8f632;
   padding: 20px;
   font-size: 2em;
@@ -245,12 +244,12 @@ input[type="password"]::placeholder {
   margin-bottom: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.1s;
-  width: 100%;
+  width: 120%;
   max-width: 300px;
 }
 
 .product-card:hover {
-  transform: scale(1.02);
+  transform: scale(1.05);
 }
 
 .product-card img {
@@ -261,9 +260,10 @@ input[type="password"]::placeholder {
 }
 
 .product-card h2 {
-  font-size: 1.25em;
+  font-size: 1.20em;
   margin-bottom: 10px;
   text-align: center;
+  color: rgb(239, 229, 47);
 }
 
 .product-card p {
@@ -277,11 +277,12 @@ input[type="password"]::placeholder {
   font-weight: bold;
   text-align: center;
   margin-top: 10px;
+  color: rgb(239, 229, 47);
+
 }
 
 .product-card .sold {
   font-size: 0.85em;
-  color: rgb(239, 229, 47);
   text-align: center;
   margin-top: 5px;
 }
@@ -297,20 +298,49 @@ input[type="password"]::placeholder {
   justify-content: center;
   gap: 20px;
 }
+
+label[for="opinion"] {
+  display: block; /* Hacer que el label ocupe todo el ancho disponible */
+  margin-bottom: 10px; /* Espaciado inferior para separar el label del textarea */
+  font-weight: bold; /* Puedes agregar negrita para resaltar el label */
+  font-size: 1.1em; /* Ajustar el tamaño de fuente si lo deseas */
+}
+
 /* Estilo para la sección de calificación */
 #opinion {
-  width: 100%; /* Ancho completo */
-  border-radius: 5px; /* Bordes redondeados */
-  border: 1px solid #ccc; /* Borde gris */
-  padding: 10px; /* Espaciado interno */
-  margin-top: 0.5rem; /* Espaciado superior */
-  resize: vertical; /* Permitir cambiar tamaño solo verticalmente */
-  background-color: #ede3e8d3;
+  width: 70%; /* Ancho completo */
+  border-radius: 1.6em; /* Bordes redondeados */
+  border: 1px solid #D36593; /* Borde gris */
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 10px;
+  background-color: #D36593;
+  resize: none; /* Evita que el usuario cambie el tamaño */
+}
+
+/*boton enviar*/
+#submit-rating {
+  background-color: #efcaf0d7; /* Color de fondo principal */
+  color: black; /* Color del texto */
+  padding: 10px ; /* Espaciado interno */
+  font-size: 1rem; /* Tamaño del texto */
+  border: none; /* Eliminar el borde */
+  border-radius: 1em; /* Bordes redondeados */
+  cursor: pointer; /* Cursor de puntero */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transición suave en hover */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+  width: 200px; 
+  margin-top: 10px; /* Espaciado superior entre el textarea y el botón */
+}
+
+#submit-rating:hover {
+  background-color: #e0e93675; /* Color de fondo al pasar el mouse */
+  transform: translateY(-2px); /* Efecto de elevarse */
 }
 
 .rating-section {
   margin-top: 1.5rem;
-  background: linear-gradient(to bottom, rgba(197, 66, 99, 0.8) 0%, rgba(70, 31, 86, 0.8) 100%);
+  background: linear-gradient(to bottom,rgba(55, 15, 71, 0.8), rgba(175, 33, 69, 0.8));
   margin: auto;
   margin-top: 2rem;
   padding: 1rem;
@@ -318,6 +348,7 @@ input[type="password"]::placeholder {
   border-radius: 1.5rem;
   box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.3);
   color: white;
+  font-weight: bold;
 }
 
 .rating-section h2 {
@@ -327,12 +358,16 @@ input[type="password"]::placeholder {
   text-align: center;
   color: var(--color-text);
 }
-
+.rating-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Espacio entre el label y las estrellas */
+  margin-bottom: 1.5rem; /* Espacio debajo de las estrellas */
+}
 .star-rating {
   display: flex;
   flex-direction: row-reverse; /* Cambia el orden de visualización de los labels */
   justify-content: center;
-  margin-bottom: 2rem; /* 20px en rem */
 }
 
 .star-rating input {
@@ -340,113 +375,144 @@ input[type="password"]::placeholder {
 }
 
 .star-rating label {
-  font-size: 2.5em; /* Mantener tamaño relativo */
-  color: #ccc; 
+  font-size: 1.7em; /* Tamaño de las estrellas */
+  color: #FFD700; /* Color dorado para las estrellas */
   cursor: pointer;
   transition: color 0.3s ease-in-out;
 }
 
 /* Estrellas doradas cuando están seleccionadas */
-.star-rating input:checked ~ label {
+.star-rating input:checked ~ label i,
+.star-rating label:hover i,
+.star-rating label:hover ~ label i {
   color: #FFD700;
 }
 
-/* Efecto hover para las estrellas */
-.star-rating label:hover,
-.star-rating label:hover ~ label {
-  color: #FFD700;
+/* Estrellas contorneadas (vacías) */
+.star-rating label i {
+  color: #ccc; /* Color inicial de las estrellas vacías */
 }
 
 /* Estilo para la sección de comentarios */
 #comments-section {
-  margin-top: 1.5rem;
-  background: linear-gradient(to bottom, rgba(197, 66, 99, 0.8) 0%, rgba(70, 31, 86, 0.8) 100%);
-  margin: 0 auto;
-  padding: 1rem;
-  max-width: 50rem;
-  border-radius: 1.5rem;
-  box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.3);
-  color: white
+  margin-top: 2em; /* Espaciado superior de 2 veces el tamaño de la fuente base */
+  background: linear-gradient(to bottom, rgba(175, 33, 69, 0.8), rgba(55, 15, 71, 0.8)); /* Degradado de fondo (de un rosa oscuro a un morado) */
+  padding: 1rem; /* Espaciado interno de 1 rem */
+  max-width: 50rem; /* Ancho máximo de la sección de comentarios */
+  border-radius: 1.5rem; /* Bordes redondeados (1.5 rem) */
+  box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.3); /* Sombra suave alrededor de la sección */
+  color: white; /* Color blanco para el texto */
 }
 
+#comments-section:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Aumentar sombra al hacer hover */
+}
+
+/* Estilos para cada comentario */
 .comment {
-  border-bottom: 0.1rem solid #ddd;
-  padding: 1rem 0;
+  border-bottom: 0.2rem solid rgba(255, 255, 255, 0.1); /* Borde inferior sutil */
+  padding: 1.5rem 0; /* Más espacio vertical entre comentarios */
+  transition: background-color 0.3s ease; /* Transición de fondo */
 }
 
+.comment:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Fondo ligeramente claro al pasar el mouse */
+}
+
+/* Estilos para el encabezado de cada comentario */
 .comment-header {
-  display: flex;
-  justify-content: space-between;
-  font-weight: bold;
+  display: flex; /* Usar Flexbox para organizar el encabezado */
+  justify-content: space-between; /* Separar el usuario y la fecha */
+  font-weight: bold; /* Texto en negrita */
+  align-items: center; /* Centrar verticalmente */
+  margin-bottom: 1rem; /* Espaciado inferior */
 }
+
+/* Estilo para el nombre del usuario en el encabezado */
 .comment-header .user {
-  font-size: 1em;
-  font-weight: bold;
-  letter-spacing: 0.05em;
-  color: #330224;
+  font-size: 1.1em; /* Aumentar el tamaño de la fuente */
+  font-weight: 600; /* Negrita sutil */
+  color: #fff; /* Blanco para el texto */
+  letter-spacing: 0.05em; /* Espaciado ligero entre letras */
+  text-transform: capitalize; /* Capitalizar la primera letra */
 }
 
+/* Estilo para la fecha del comentario en el encabezado */
 .comment-header .date {
-  font-size: 0.9em;
-    color: #ccc;
-    margin-left: 1rem;
+  font-size: 0.9em; /* Tamaño de fuente ligeramente más pequeño */
+  color: #d1d1d1; /* Gris más claro */
+  margin-left: 1rem; /* Espaciado a la izquierda */
+  text-transform: capitalize; /* Capitalizar las palabras de la fecha */
 }
 
+/* Estilos para la calificación en cada comentario (estrellas o número) */
 .comment-rating {
-  color: #ffdf00;
-  margin-right: 1rem;
-  font-size: 1.5em;
+  color: #ffdf00; /* Color dorado para la calificación */
+  font-size: 1.8em; /* Tamaño de fuente más grande */
+  margin-right: 1rem; /* Espaciado a la derecha */
 }
 
+/* Estilo para el texto del comentario */
 .comment-text {
-  margin-top: 0.9rem;
-  font-size: 1em;
-  color: #f1f1f1;
-  line-height: 1.5em;
+  font-size: 1em; /* Tamaño de fuente estándar */
+  color: #f1f1f1; /* Blanco para el texto */
+  line-height: 1.7em; /* Mayor altura de línea para mejorar la legibilidad */
+  margin-top: 0.9rem; /* Espaciado superior */
+  word-wrap: break-word; /* Evitar desbordamientos de texto largo */
 }
 
-/*boton enviar*/
-#submit-rating {
-  background-color: #dc90d0a9; /* Color de fondo principal */
-  color: white; /* Color del texto */
-  padding: 10px 20px; /* Espaciado interno */
-  font-size: 1rem; /* Tamaño del texto */
-  border: none; /* Eliminar el borde */
-  border-radius: 1em; /* Bordes redondeados */
-  cursor: pointer; /* Cursor de puntero */
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Transición suave en hover */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+/* Estilos responsive */
+@media (max-width: 768px) {
+  #comments-section {
+    padding: 1rem; /* Menos padding en pantallas pequeñas */
+    max-width: 100%; /* 100% de ancho en pantallas pequeñas */
+  }
+
+  .comment {
+    padding: 1rem 0; /* Menos espacio entre comentarios en pantallas pequeñas */
+  }
+
+  .comment-header {
+    flex-direction: column; /* Colocar el nombre y la fecha uno debajo del otro */
+    align-items: flex-start; /* Alinear a la izquierda */
+  }
+
+  .comment-header .user {
+    font-size: 1em; /* Reducir tamaño del nombre */
+  }
+
+  .comment-rating {
+    font-size: 1.4em; /* Reducir tamaño de las estrellas */
+  }
 }
 
-#submit-rating:hover {
-  background-color: #e0e93675; /* Color de fondo al pasar el mouse */
-  transform: translateY(-2px); /* Efecto de elevarse */
+@media (max-width: 480px) {
+  .comment-rating {
+    font-size: 1.2em; /* Aumentar la reducción del tamaño de las estrellas en pantallas muy pequeñas */
+  }
 }
+
+
 
 /*===PRODUCTOS RELACIONADOS===*/
 #related-products-container {
   margin-top: 2rem;
-  background: linear-gradient(to bottom, rgba(224, 78, 114, 0.5), rgba(70, 31, 86, 0.8));
-  padding: 1rem;
-  border-radius: 20px;
+  background: linear-gradient(to bottom, rgba(175, 33, 69, 0.8), rgba(55, 15, 71, 0.8));
+  padding: 1.5rem;
+  border-radius: 1.8em;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   max-width: 414px;
+  
 }
 
-#related-products h3 {
+#related-products-container h3 {
   font-family: 'Rajdhani', sans-serif;
   font-weight: bold;
   font-size: 20px;
-  letter-spacing: 0.2em; /* 20% */
+  letter-spacing: 0.2em;
   text-align: center;
-  color: var(--color-text);
-  margin-bottom: 1rem;
-}
-
-#related-products .row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+  color: #FFFFFF; /* Color de texto blanco para mayor contraste */
+  margin-bottom: 1.5rem;
 }
 
 /* Estilos de la rama master */

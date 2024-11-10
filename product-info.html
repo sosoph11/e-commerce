@@ -10,7 +10,7 @@
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
-</head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 <body class="product-info">
   <nav class="navbar navbar-expand-lg navbar-dark p-1">
@@ -37,6 +37,7 @@
               <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
               <li><a id="logout" class="dropdown-item" href="login.html">Cerrar sesión</a></li>
             </ul>
+          </li>
           <li class="nav-item d-flex align-items-center">
             <img id="navbar-profile-pic" src="default-pic.jpg" alt="Foto de perfil" class="rounded-circle">
           </li>
@@ -48,6 +49,7 @@
       </div>
     </div>
   </nav>
+
   <main>
     <div class="container">
       <!--===Seccion de información del producto===-->
@@ -56,42 +58,39 @@
       <div class="row">
         <div id="related-products-container" class="col-md-4">
           <!--===Productos relacionados===-->
-          <div id="related-products">
-            <h3>Productos relacionados:</h3>
+          <div id="related-products" class="row">
+            <h3>PRODUCTOS RELACIONADOS:</h3>
           </div>
         </div>
-        <div class="col-md-8"> 
-          <div class="row"> 
-            <!--===Seccion de controles graficos===-->
-            <div class="col-md-12 mb-3">
-              <div class="rating-section">
-                <h2>CALIFICA ESTE ARTÍCULO Y BRINDA TU OPINIÓN</h2>
-                <div class="rating-container">
-                <label for="rating">CALIFICACIÓN:</label>
-                <div class="star-rating">
-                  <input type="radio" name="rating" id="star5" value="5"><label for="star5" class="star">★</label>
-                  <input type="radio" name="rating" id="star4" value="4"><label for="star4" class="star">★</label>
-                  <input type="radio" name="rating" id="star3" value="3"><label for="star3" class="star">★</label>
-                  <input type="radio" name="rating" id="star2" value="2"><label for="star2" class="star">★</label>
-                  <input type="radio" name="rating" id="star1" value="1"><label for="star1" class="star">★</label>
-                </div>
-                <label for="opinion">OPINIÓN:</label>
-                <textarea id="opinion" rows="4" style="width: 100%; border-radius: 5px; border: 1px solid #ccc; padding: 10px;"></textarea>
-                <button class="btn-primary" id="submit-rating" type="button">ENVIAR</button>
-              </div>            
-            </div>
-            <!--===Seccion de comentarios==-->
-            <div class="col-md-12 mb-3" >
-              <div id="comments-section">
-                <h3>COMENTARIOS</h3>
-                <div id="comments-list"></div>
+        <div class="col-md-8">
+          <!-- Sección de calificación y comentarios -->
+          <div class="rating-section">
+            <h2>CALIFICA ESTE ARTÍCULO Y BRINDA TU OPINIÓN</h2>
+            <div class="rating-container">
+              <label for="rating">CALIFICACIÓN:</label>
+              <div class="star-rating">
+                <input type="radio" name="rating" id="star5" value="5"><label for="star5" class="star"><i class="fas fa-star"></i></label>
+                <input type="radio" name="rating" id="star4" value="4"><label for="star4" class="star"><i class="fas fa-star"></i></label>
+                <input type="radio" name="rating" id="star3" value="3"><label for="star3" class="star"><i class="fas fa-star"></i></label>
+                <input type="radio" name="rating" id="star2" value="2"><label for="star2" class="star"><i class="fas fa-star"></i></label>
+                <input type="radio" name="rating" id="star1" value="1"><label for="star1" class="star"><i class="fas fa-star"></i></label>
               </div>
             </div>
+            <label for="opinion">OPINIÓN:</label>
+            <textarea id="opinion" rows="4"></textarea>
+            <button id="submit-rating">ENVIAR</button>
+          </div>
+
+          <!-- Sección de comentarios -->
+          <div id="comments-section">
+            <h3>COMENTARIOS</h3>
+            <div id="comments-list"></div>
           </div>
         </div>
       </div>
     </div>
   </main>
+
   <footer class="text-muted">
     <div class="container">
       <p class="float-end">
@@ -100,6 +99,7 @@
       <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
     </div>
   </footer>
+
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
@@ -108,6 +108,7 @@
       <div></div>
     </div>
   </div>
+
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/login.js"></script>
   <script src="js/init.js"></script>
