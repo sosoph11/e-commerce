@@ -1164,6 +1164,15 @@ label {
 .shipping-options label {
   font-weight: bold;
 }
+
+.shipping-address {
+  width: 100%;
+  margin: 40px auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
 /* Mensaje de carrito vacío */
 #empty-cart-message {
   padding: 20px; /* Espacio interno */
