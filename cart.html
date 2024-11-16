@@ -85,7 +85,9 @@
 
       <!-- TIPOS DE ENVIOS -->
       <div class="shipping-options">
-        <h5> Tipo de Envío </h5>
+        <h5> Tipo de Envío <i class="fas fa-chevron-down"></i>
+        </h5>
+        <div class="shipping-details" style="display: none;">
         <div>
           <input type="radio" id="premium" name="shipping" value="0.15">
             <label for="premium"> Premium - 2 a 5 Días (15%) </label>
@@ -95,14 +97,17 @@
             <label for="express"> Express - 5 a 8 Días (7%) </label>
         </div>
         <div>
-          <input type="radio" id="standard" name="shipping" value="0.05" checked>
+          <input type="radio" id="standard" name="shipping" value="0.05">
             <label for="standard"> Standard - 12 a 15 Días (5%) </label>
+          </div>
         </div>
       </div>
 
+      <!--Dirección de envío-->
       <div class="shipping-options">
-        <h5> Dirección de Envío </h5>
-
+        <h5> Dirección de Envío <i class="fas fa-chevron-down"></i>
+        </h5>
+        <div class="shipping-details" style="display: none;">
         <form class="shipping-address">
           <label for="departamento">Departamento</label>
           <input type="text" id="departamento">
@@ -116,9 +121,13 @@
           <input type="text" id="corner">
         </form>
       </div>
+      </div>
 
+      <!--Formas de pago-->
       <div class="shipping-options">
-        <h5>Formas de pago</h5>
+        <h5>Formas de pago <i class="fas fa-chevron-down"></i>
+        </h5>
+        <div class="shipping-details" style="display: none;">
         <div>
           <input type="radio" id="credit-card" name="payment">
             <label for="credit-card">Tarjeta de crédito</label>
@@ -129,9 +138,13 @@
             </div>
         </div>
         
-        <p> Total con Envío: <span class="total-with-shipping"> 0 </span></p>     
+        <p> Total con Envío: <span class="total-with-shipping"> 0 </span></p>
+        
+        <!-- Contenedor para mensajes de feedback -->
+      <div id="feedback" style="color: red; font-weight: bold; margin-bottom: 1em;"></div>     
             <button class="btn-checkout"> FINALIZAR COMPRA </button>
             <button class="btn-continue-shopping"> SEGUIR COMPRANDO </button>
+          </div>
       </div>
 
     </div>
