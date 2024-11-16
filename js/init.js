@@ -40,34 +40,42 @@ let getJSONData = function(url){
     });
 }
 
+// Función para actualizar el badge del carrito
+function updateCartBadge() {
+    const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+    const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
+    const cartBadge = document.getElementById("cart-badge");
+
+    if (cartBadge) {
+        cartBadge.textContent = totalQuantity;
+        cartBadge.style.display = totalQuantity > 0 ? "inline-block" : "none"; // Oculta el badge si está vacío
+    }
+}
+
+// Mostrar nombre de usuario en la barra de navegación si está guardado en localStorage
 document.addEventListener('DOMContentLoaded', function() {
   const username = localStorage.getItem('username');
   if (username) {
       document.getElementById('user-name').textContent = `${username}`;
   }
+  updateCartBadge(); // Actualiza el badge al cargar la página
 });
 
 // Función para cargar la imagen de perfil desde localStorage
 document.addEventListener("DOMContentLoaded", () => {
-  // Obtiene el elemento de la imagen de perfil en la barra de navegación
   let navbarProfilePic = document.getElementById("navbar-profile-pic");
-  
-  // Intenta cargar la foto de perfil guardada en localStorage
   let savedPic = localStorage.getItem("profilePic");
+  
   if (savedPic) {
-      // Si hay una imagen guardada, actualiza la fuente de la imagen en la barra de navegación
       navbarProfilePic.src = savedPic;
   }
 
-  //dark-mode
+  // Modo oscuro
   const darkModeSwitch = document.getElementById('darkModeSwitch');
-
   darkModeSwitch.addEventListener('change', function() {
       document.body.classList.toggle('dark-mode');
       localStorage.setItem('darkMode', darkModeSwitch.checked);
   });
-
   darkModeSwitch.checked = localStorage.getItem('darkMode') === 'true';
   document.body.classList.toggle('dark-mode', darkModeSwitch.checked);
-
 });

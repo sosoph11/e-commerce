@@ -236,6 +236,9 @@ input[type="password"]::placeholder {
   margin-bottom: 40px;
 }
 
+#producto-relacionado{
+  margin-inline: 4rem;
+}
 .product-card {
   background-color: #4f0645ac;
   color: #f5f5f3;
