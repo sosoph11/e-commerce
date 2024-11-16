@@ -1247,12 +1247,3 @@ label {
   padding: 0.20rem; /* Espacio interno */
   font-size: 14px; /* Tamaño de fuente */
 }
-
-/* Feedback carrito */
-input.invalid {
-  border: 2px solid red;
-}
-
-#feedback {
-  display: none;
-}
