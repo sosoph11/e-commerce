@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         product.relatedProducts.forEach(related => {
             let relatedProductHTML = `
             <div class="col-6 col-md-4">
-                <div class="product-card" data-product-id="${related.id}">
+                <div class="product-card" id="producto-relacionado" data-product-id="${related.id}">
                     <img src="${related.image}" alt="${related.name}">
                     <h2>${related.name}</h2>
                 </div>
