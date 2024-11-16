@@ -1247,3 +1247,41 @@ label {
   padding: 0.20rem; /* Espacio interno */
   font-size: 14px; /* Tamaño de fuente */
 }
+
+/* Feedback carrito */
+input.invalid {
+  border: 2px solid red;
+}
+
+#feedback {
+  display: none;
+}
+
+.feedback-message {
+  display: none;
+  font-size: 1.25rem;
+  text-align: center;
+  padding: 1.25rem;
+  margin: 1.25rem;
+  opacity: 1;
+  transition: opacity 1s ease-out;
+}
+.fade-out {
+  opacity: 0;
+}
+
+.shipping-options h5 {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon {
+  margin-left: 0.625rem;
+  transition: transform 0.3s ease;
+}
+
+.icon.rotated {
+  transform: rotate(180deg);
+}
