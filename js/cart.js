@@ -95,6 +95,82 @@ document.addEventListener("DOMContentLoaded", () => {
         updateCartSummary();
     });
 
+const feedback = document.getElementById("feedback");
+
+// Función para mostrar feedback al usuario
+function setFeedback(message, isError = true) {
+    feedback.textContent = message;
+    feedback.style.color = isError ? "red" : "green";
+    feedback.style.display = "block";
+}
+
+// Función para validar un campo individual
+function validateField(field) {
+    if (field.value.trim() === "") {
+        field.classList.add("invalid");
+        return false;
+    } else {
+        field.classList.remove("invalid");
+        return true;
+    }
+}
+
+function validateForm() {
+    let isValid = true;
+
+    // Validar campos de dirección
+    const fields = ["departamento", "city", "street", "number", "corner"];
+    fields.forEach((id) => {
+        const field = document.getElementById(id);
+        if (!validateField(field)) {
+            isValid = false;
+        }
+    });
+
+    // Validar tipo de envío
+    const shippingSelected = document.querySelector('input[name="shipping"]:checked');
+    if (!shippingSelected) {
+        setFeedback("Por favor seleccione un tipo de envío.");
+        isValid = false;
+    }
+
+    // Validar forma de pago
+    const paymentSelected = document.querySelector('input[name="payment"]:checked');
+    if (!paymentSelected) {
+        setFeedback("Por favor seleccione una forma de pago.");
+        isValid = false;
+    }
+
+    return isValid;
+}
+
+// Validación dinámica en tiempo real
+document.querySelectorAll("input").forEach((input) => {
+    input.addEventListener("input", () => validateField(input));
+});
+
+// Botón "FINALIZAR COMPRA"
+document.querySelector(".btn-checkout").addEventListener("click", () => {
+    feedback.style.display = "none";
+
+    // Si el carrito está vacío
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    if (cart.length === 0) {
+        setFeedback("El carrito está vacío. No puede finalizar la compra.");
+        return;
+    }
+
+    // Validar formulario
+    if (!validateForm()) {
+        setFeedback("Por favor complete todos los datos obligatorios.");
+        return;
+    }
+
+    // Si todo está correcto
+    setFeedback("¡Compra realizada con éxito!", false);
+    localStorage.removeItem("cart"); // Limpiar carrito
+});
+
     // Botón de "Seguir Comprando"
     continueShoppingButton.addEventListener("click", () => {
         window.location.href = "categories.html"; // Cambia esto a la URL de la página de categorías o productos

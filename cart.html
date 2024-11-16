@@ -82,6 +82,9 @@
         <h5> Resumen de la compra </h5>
           <p class="total-quantity"> Productos (0) </p> <!-- Este se actualiza automáticamente -->
           <p> Total: <span class="total-price"> 0 </span></p> <!-- Este también se actualizará, esperemos -->
+      
+      <!-- Contenedor para mensajes de feedback -->
+      <div id="feedback" style="color: red; font-weight: bold; margin-bottom: 1em;"></div>
 
       <!-- TIPOS DE ENVIOS -->
       <div class="shipping-options">
@@ -95,11 +98,12 @@
             <label for="express"> Express - 5 a 8 Días (7%) </label>
         </div>
         <div>
-          <input type="radio" id="standard" name="shipping" value="0.05" checked>
+          <input type="radio" id="standard" name="shipping" value="0.05">
             <label for="standard"> Standard - 12 a 15 Días (5%) </label>
         </div>
       </div>
 
+      <!--Dirección de envío-->
       <div class="shipping-options">
         <h5> Dirección de Envío </h5>
 
@@ -116,7 +120,7 @@
           <input type="text" id="corner">
         </form>
       </div>
-
+      <!--Formas de pago-->
       <div class="shipping-options">
         <h5>Formas de pago</h5>
         <div>
