@@ -1172,6 +1172,13 @@ label {
   display: flex;
   flex-direction: column;
 }
+.shipping-address input[type="text"] {
+  border-color: #e91e63;
+  border-radius: 10px;
+  background-color: #2b2147;
+  padding: 5px;
+}
+
 
 /* Mensaje de carrito vacío */
 #empty-cart-message {
