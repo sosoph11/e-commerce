@@ -85,7 +85,7 @@
 
       <!-- TIPOS DE ENVIOS -->
       <div class="shipping-options">
-        <h5> Tipo de Envío <i class="fas fa-chevron-down"></i>
+        <h5> Tipo de Envío <i class="fas fa-chevron-down icon"></i>
         </h5>
         <div class="shipping-details" style="display: none;">
         <div>
@@ -105,7 +105,7 @@
 
       <!--Dirección de envío-->
       <div class="shipping-options">
-        <h5> Dirección de Envío <i class="fas fa-chevron-down"></i>
+        <h5> Dirección de Envío <i class="fas fa-chevron-down icon"></i>
         </h5>
         <div class="shipping-details" style="display: none;">
         <form class="shipping-address">
@@ -125,17 +125,29 @@
 
       <!--Formas de pago-->
       <div class="shipping-options">
-        <h5>Formas de pago <i class="fas fa-chevron-down"></i>
+        <h5>Formas de pago <i class="fas fa-chevron-down icon"></i>
         </h5>
         <div class="shipping-details" style="display: none;">
         <div>
           <input type="radio" id="credit-card" name="payment">
             <label for="credit-card">Tarjeta de crédito</label>
         </div>
+        <div id="credit-card-fields" class="payment-fields" style="display: none;">
+          <label for="card-number">Número de tarjeta</label>
+          <input type="text" id="card-number">
+          <label for="expiry-date">Fecha de vencimiento</label>
+          <input type="text" id="expiry-date" placeholder="MM/AA">
+          <label for="cvc">CVC</label>
+          <input type="text" id="cvc">
+          </div>
         <div>
           <input type="radio" id="bank-transfer" name="payment">
             <label for="bank-transfer">Transferencia bancaria</label>
             </div>
+            <div>
+              <input type="radio" id="bank-transfer" name="payment">
+              <label for="bank-transfer">Transferencia bancaria</label>
+            </div>    
         </div>
         </div>
         

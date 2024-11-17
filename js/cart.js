@@ -128,6 +128,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     }
 
+    // Mostrar/Ocultar campos según la opción seleccionada
+document.querySelectorAll('input[name="payment"]').forEach((input) => {
+    input.addEventListener("change", () => {
+      document.getElementById("credit-card-fields").style.display =
+        input.id === "credit-card" ? "block" : "none";
+      document.getElementById("bank-transfer-fields").style.display =
+        input.id === "bank-transfer" ? "block" : "none";
+    });
+  });
+
     function validateForm() {
     let isValid = true;
 
@@ -150,7 +160,22 @@ document.addEventListener("DOMContentLoaded", () => {
     const paymentSelected = document.querySelector('input[name="payment"]:checked');
     if (!paymentSelected) {
         isValid = false;
-    }
+    } else {
+        // Validar campos específicos de la forma de pago seleccionada
+        if (paymentSelected.id === "credit-card") {
+          ["card-number", "expiry-date", "cvc"].forEach((id) => {
+            const field = document.getElementById(id);
+            if (!validateField(field)) {
+              isValid = false;
+            }
+          });
+        } else if (paymentSelected.id === "bank-transfer") {
+          const bankField = document.getElementById("bank-account");
+          if (!validateField(bankField)) {
+            isValid = false;
+          }
+        }
+      }
 
     return isValid;
 }
